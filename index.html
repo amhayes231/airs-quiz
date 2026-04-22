@@ -190,7 +190,7 @@
     <strong style="color:#f0f0f0;">Round 2</strong> — 10 questions: Real AIRS granule vs synthetic GEOS-as-AIRS
   </p>
   <hr class="divider">
-  <p style="font-size:0.9rem;">You'll be shown one channel throughout — assigned randomly at the start.</p>
+  <p style="font-size:0.9rem;">You'll be shown one channel throughout, assigned randomly at the start.</p>
   <button class="btn" onclick="startQuiz()">Let's go →</button>
 </div>
 
@@ -210,8 +210,8 @@
      ═══════════════════════════════════════════ -->
 <div class="screen" id="screen-q1-intro">
   <div class="badge">Round 1 of 2</div>
-  <h1>🌊 Noise Quiz</h1>
-  <p>You'll see 5 noise maps. Each one is either real AIRS instrument noise (with the along-track mean removed) or synthetically generated noise designed to mimic it.</p>
+  <h1> Noise Quiz</h1>
+  <p>You'll see 5 noise maps. Each one is either real AIRS instrument noise or synthetically generated noise designed to mimic it.</p>
   <p style="color:#ffb347;">Can your eyes tell the difference?</p>
   <button class="btn" onclick="startNoiseQuiz()">Start Round 1 →</button>
 </div>
@@ -252,7 +252,7 @@
      ═══════════════════════════════════════════ -->
 <div class="screen" id="screen-q2-intro">
   <div class="badge">Round 2 of 2</div>
-  <h1>🌍 Granule Quiz</h1>
+  <h1>Granule Quiz</h1>
   <p>You'll see 10 brightness temperature granules. Each one is either a real AIRS observation or a synthetic GEOS-as-AIRS granule with added noise.</p>
   <p style="color:#ffb347;">Both show gravity waves — the question is which one came from space.</p>
   <button class="btn" onclick="startGranuleQuiz()">Start Round 2 →</button>
@@ -424,10 +424,10 @@ function showNoiseResults() {
 
 function noiseMessage(s) {
   if (s === 5) return "Perfect score! You've clearly been staring at AIRS data for too long. 👀";
-  if (s === 4) return "Really impressive — the noise is almost indistinguishable. 🔬";
+  if (s === 4) return "Really impressive, the noise is almost indistinguishable. 🔬";
   if (s === 3) return "Not bad! Even experts struggle with this one.";
   if (s === 2) return "Tricky, right? The synthetic noise is designed to look real!";
-  return "Don't worry — even our model found this hard at first. 😅";
+  return "Don't worry, even our model found this hard at first. 😅";
 }
 
 function startGranuleQuiz() {
@@ -497,9 +497,9 @@ function showFinalResults() {
 
 function finalMessage(s) {
   if (s === 15) return "Flawless. Are you sure you're not the neural network? 🤖";
-  if (s >= 13)  return "Outstanding — you clearly have a great eye for atmospheric data! 🌟";
+  if (s >= 13)  return "Outstanding, you clearly have a great eye for atmospheric data! 🌟";
   if (s >= 10)  return "Solid score! You'd give our model a run for its money. 💪";
-  if (s >= 7)   return "Not bad at all — this is genuinely difficult! 🎯";
+  if (s >= 7)   return "Not bad at all, this is genuinely difficult! 🎯";
   if (s >= 4)   return "Hey, at least you tried! The machine wins this round. 😄";
   return "Our model scores better than this, but don't take it personally. 🤷";
 }
