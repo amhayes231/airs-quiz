@@ -385,7 +385,7 @@
 // ══════════════════════════════════════════════
 const JSONBIN_BIN_ID  = '69eb4efc36566621a8e88123';
 const JSONBIN_API_KEY = '$2a$10$sCm91ckOORlp0QCXJEViYOPVJZCTJJlb9e./P21Ei49Sc2wzUaFeG';
-const JSONBIN_URL     = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+const JSONBIN_BASE    = 'https://api.jsonbin.io/v3/b';
 
 const CHANNELS     = ['4.3 µm', '15 µm High', '15 µm Low'];
 const CHANNEL_DIRS = ['4mu', '15h', '15l'];
@@ -414,39 +414,58 @@ let noiseScore, granScore;
 // ══════════════════════════════════════════════
 async function loadScores() {
   try {
-    const r = await fetch(JSONBIN_URL + '/latest', {
-      headers: { 'X-Master-Key': JSONBIN_API_KEY }
+    console.log('[JSONBin] Loading scores...');
+    const r = await fetch(`${JSONBIN_BASE}/${JSONBIN_BIN_ID}/latest`, {
+      method: 'GET',
+      headers: {
+        'X-Master-Key': JSONBIN_API_KEY,
+        'X-Bin-Meta':   'false'
+      }
     });
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    const json = await r.json();
-    return json.record || { noise: [], gran: [], total: [] };
+    console.log('[JSONBin] Load status:', r.status);
+    if (!r.ok) {
+      const txt = await r.text();
+      throw new Error(`HTTP ${r.status}: ${txt}`);
+    }
+    const data = await r.json();
+    console.log('[JSONBin] Loaded data:', data);
+    // v3 with X-Bin-Meta:false returns the record directly
+    return data && data.noise ? data : { noise: [], gran: [], total: [] };
   } catch(e) {
-    console.warn('Failed to load scores:', e);
+    console.warn('[JSONBin] Load failed:', e);
     return { noise: [], gran: [], total: [] };
   }
 }
 
 async function saveScore(n, g) {
   try {
-    // Read current scores first
+    console.log('[JSONBin] Saving score — noise:', n, 'gran:', g);
+
     const scores = await loadScores();
     scores.noise.push(n);
     scores.gran.push(g);
     scores.total.push(n + g);
 
-    // Write back
-    const r = await fetch(JSONBIN_URL, {
+    console.log('[JSONBin] Writing updated scores:', scores);
+
+    const r = await fetch(`${JSONBIN_BASE}/${JSONBIN_BIN_ID}`, {
       method:  'PUT',
       headers: {
         'Content-Type': 'application/json',
-        'X-Master-Key': JSONBIN_API_KEY
+        'X-Master-Key': JSONBIN_API_KEY,
+        'X-Bin-Meta':   'false'
       },
       body: JSON.stringify(scores)
     });
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+
+    console.log('[JSONBin] Save status:', r.status);
+    const result = await r.json();
+    console.log('[JSONBin] Save result:', result);
+
+    if (!r.ok) throw new Error(`HTTP ${r.status}: ${JSON.stringify(result)}`);
     return scores;
   } catch(e) {
-    console.warn('Failed to save score:', e);
+    console.warn('[JSONBin] Save failed:', e);
     return null;
   }
 }
@@ -604,18 +623,16 @@ async function showFinalResults() {
 
   showScreen('screen-final');
 
-  // Save and get updated scores back
   const scores = await saveScore(noiseScore, granScore);
   const msg    = document.getElementById('saving-msg');
 
   if (scores) {
-    msg.textContent = `Score saved. ${scores.total.length} player${scores.total.length !== 1 ? 's' : ''} so far.`;
+    msg.textContent = `Score saved! ${scores.total.length} player${scores.total.length !== 1 ? 's' : ''} so far.`;
     drawDist('chart-noise',  scores.noise, noiseScore, 5,  'stat-noise-n',  'stat-noise-avg');
     drawDist('chart-gran',   scores.gran,  granScore,  10, 'stat-gran-n',   'stat-gran-avg');
     drawDist('chart-final',  scores.total, total,      15, 'stat-final-n',  'stat-final-avg');
   } else {
-    msg.textContent = 'Could not save score (no connection).';
-    // Still draw charts with just this player's score
+    msg.textContent = 'Could not save score (check connection).';
     const fallback = { noise:[noiseScore], gran:[granScore], total:[total] };
     drawDist('chart-noise',  fallback.noise, noiseScore, 5,  'stat-noise-n',  'stat-noise-avg');
     drawDist('chart-gran',   fallback.gran,  granScore,  10, 'stat-gran-n',   'stat-gran-avg');
@@ -664,10 +681,10 @@ function drawDist(canvasId, allScores, myScore, maxScore, nId, avgId) {
   const barGap = Math.max(1, barW * 0.14);
 
   for (let i = 0; i <= maxScore; i++) {
-    const x  = pad.l + i * barW + barGap / 2;
-    const bW = barW - barGap;
-    const bH = Math.max((freq[i] / maxFreq) * cH, freq[i] > 0 ? 2 : 0);
-    const y  = pad.t + cH - bH;
+    const x    = pad.l + i * barW + barGap / 2;
+    const bW   = barW - barGap;
+    const bH   = Math.max((freq[i] / maxFreq) * cH, freq[i] > 0 ? 2 : 0);
+    const y    = pad.t + cH - bH;
     const isMe = i === myScore;
 
     ctx.fillStyle = isMe ? '#f74f8e' : '#4f8ef730';
