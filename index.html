@@ -231,6 +231,14 @@
     margin-right: 4px;
     vertical-align: middle;
   }
+
+  .saving-msg {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+    margin-top: 8px;
+    min-height: 18px;
+  }
 </style>
 </head>
 <body>
@@ -340,6 +348,8 @@
     <p style="margin-top:8px;font-size:0.8rem;color:var(--muted)">Channel: <span id="breakdown-channel"></span></p>
   </div>
 
+  <div class="saving-msg" id="saving-msg">Saving your score...</div>
+
   <hr class="divider">
   <p style="font-size:0.85rem;margin-bottom:14px;">How do you compare to everyone else who's played?</p>
 
@@ -373,6 +383,10 @@
 // ══════════════════════════════════════════════
 // CONFIG
 // ══════════════════════════════════════════════
+const JSONBIN_BIN_ID  = '69eb4efc36566621a8e88123';
+const JSONBIN_API_KEY = '$2a$10$sCm91ckOORlp0QCXJEViYOPVJZCTJJlb9e./P21Ei49Sc2wzUaFeG';
+const JSONBIN_URL     = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+
 const CHANNELS     = ['4.3 µm', '15 µm High', '15 µm Low'];
 const CHANNEL_DIRS = ['4mu', '15h', '15l'];
 
@@ -396,28 +410,44 @@ let noiseIdx, granIdx;
 let noiseScore, granScore;
 
 // ══════════════════════════════════════════════
-// STORAGE — shared leaderboard
+// JSONBIN STORAGE
 // ══════════════════════════════════════════════
-const STORAGE_KEY = 'airs-quiz-scores-v1';
-
 async function loadScores() {
   try {
-    const r = await window.storage.get(STORAGE_KEY, true);
-    return r ? JSON.parse(r.value) : { noise: [], gran: [], total: [] };
-  } catch {
+    const r = await fetch(JSONBIN_URL + '/latest', {
+      headers: { 'X-Master-Key': JSONBIN_API_KEY }
+    });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const json = await r.json();
+    return json.record || { noise: [], gran: [], total: [] };
+  } catch(e) {
+    console.warn('Failed to load scores:', e);
     return { noise: [], gran: [], total: [] };
   }
 }
 
 async function saveScore(n, g) {
   try {
+    // Read current scores first
     const scores = await loadScores();
     scores.noise.push(n);
     scores.gran.push(g);
     scores.total.push(n + g);
-    await window.storage.set(STORAGE_KEY, JSON.stringify(scores), true);
+
+    // Write back
+    const r = await fetch(JSONBIN_URL, {
+      method:  'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Master-Key': JSONBIN_API_KEY
+      },
+      body: JSON.stringify(scores)
+    });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return scores;
   } catch(e) {
-    console.warn('Storage unavailable:', e);
+    console.warn('Failed to save score:', e);
+    return null;
   }
 }
 
@@ -446,8 +476,8 @@ function startQuiz() {
   const idx = Math.floor(Math.random() * 3);
   channel = CHANNELS[idx];
   chDir   = CHANNEL_DIRS[idx];
-  document.getElementById('channel-display').textContent     = channel;
-  document.getElementById('breakdown-channel').textContent   = channel;
+  document.getElementById('channel-display').textContent   = channel;
+  document.getElementById('breakdown-channel').textContent = channel;
   showScreen('screen-channel');
 }
 
@@ -565,18 +595,32 @@ function granMessage(s) {
 // ── FINAL ─────────────────────────────────────
 async function showFinalResults() {
   const total = noiseScore + granScore;
+
   document.getElementById('final-score-display').textContent = `${total} / 15`;
   document.getElementById('final-score-msg').textContent     = finalMessage(total);
   document.getElementById('breakdown-noise').textContent     = `${noiseScore} / 5`;
   document.getElementById('breakdown-gran').textContent      = `${granScore} / 10`;
+  document.getElementById('saving-msg').textContent          = 'Saving your score...';
+
   showScreen('screen-final');
 
-  await saveScore(noiseScore, granScore);
-  const scores = await loadScores();
+  // Save and get updated scores back
+  const scores = await saveScore(noiseScore, granScore);
+  const msg    = document.getElementById('saving-msg');
 
-  drawDist('chart-noise',  scores.noise, noiseScore, 5,  'stat-noise-n',  'stat-noise-avg');
-  drawDist('chart-gran',   scores.gran,  granScore,  10, 'stat-gran-n',   'stat-gran-avg');
-  drawDist('chart-final',  scores.total, total,      15, 'stat-final-n',  'stat-final-avg');
+  if (scores) {
+    msg.textContent = `Score saved. ${scores.total.length} player${scores.total.length !== 1 ? 's' : ''} so far.`;
+    drawDist('chart-noise',  scores.noise, noiseScore, 5,  'stat-noise-n',  'stat-noise-avg');
+    drawDist('chart-gran',   scores.gran,  granScore,  10, 'stat-gran-n',   'stat-gran-avg');
+    drawDist('chart-final',  scores.total, total,      15, 'stat-final-n',  'stat-final-avg');
+  } else {
+    msg.textContent = 'Could not save score (no connection).';
+    // Still draw charts with just this player's score
+    const fallback = { noise:[noiseScore], gran:[granScore], total:[total] };
+    drawDist('chart-noise',  fallback.noise, noiseScore, 5,  'stat-noise-n',  'stat-noise-avg');
+    drawDist('chart-gran',   fallback.gran,  granScore,  10, 'stat-gran-n',   'stat-gran-avg');
+    drawDist('chart-final',  fallback.total, total,      15, 'stat-final-n',  'stat-final-avg');
+  }
 }
 
 function finalMessage(s) {
@@ -611,7 +655,6 @@ function drawDist(canvasId, allScores, myScore, maxScore, nId, avgId) {
 
   ctx.clearRect(0, 0, W, H);
 
-  // Frequency count
   const freq    = new Array(maxScore + 1).fill(0);
   allScores.forEach(s => { if (s >= 0 && s <= maxScore) freq[s]++; });
   const maxFreq = Math.max(...freq, 1);
@@ -627,7 +670,6 @@ function drawDist(canvasId, allScores, myScore, maxScore, nId, avgId) {
     const y  = pad.t + cH - bH;
     const isMe = i === myScore;
 
-    // Bar
     ctx.fillStyle = isMe ? '#f74f8e' : '#4f8ef730';
     if (ctx.roundRect) {
       ctx.beginPath(); ctx.roundRect(x, y, bW, bH, 3); ctx.fill();
@@ -635,7 +677,6 @@ function drawDist(canvasId, allScores, myScore, maxScore, nId, avgId) {
       ctx.fillRect(x, y, bW, bH);
     }
 
-    // Outline on my bar
     if (isMe) {
       ctx.strokeStyle = '#f74f8e';
       ctx.lineWidth   = 1.5;
@@ -644,19 +685,16 @@ function drawDist(canvasId, allScores, myScore, maxScore, nId, avgId) {
       } else {
         ctx.strokeRect(x, y, bW, bH);
       }
-
-      // YOU label above bar
-      ctx.fillStyle  = '#f74f8e';
-      ctx.font       = 'bold 9px Space Mono, monospace';
-      ctx.textAlign  = 'center';
+      ctx.fillStyle = '#f74f8e';
+      ctx.font      = 'bold 9px Space Mono, monospace';
+      ctx.textAlign = 'center';
       ctx.fillText('YOU', x + bW / 2, y - 4);
     }
   }
 
-  // X axis tick labels
-  ctx.fillStyle  = '#6b7094';
-  ctx.font       = '9px DM Sans, sans-serif';
-  ctx.textAlign  = 'center';
+  ctx.fillStyle = '#6b7094';
+  ctx.font      = '9px DM Sans, sans-serif';
+  ctx.textAlign = 'center';
   for (let i = 0; i <= maxScore; i++) {
     if (maxScore <= 5 || i % Math.ceil(maxScore / 5) === 0 || i === maxScore) {
       const x = pad.l + i * barW + barW / 2;
@@ -664,7 +702,6 @@ function drawDist(canvasId, allScores, myScore, maxScore, nId, avgId) {
     }
   }
 
-  // Stats line
   const avg = total > 0
     ? (allScores.reduce((a,b) => a+b, 0) / total).toFixed(1)
     : '--';
