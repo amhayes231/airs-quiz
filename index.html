@@ -381,8 +381,7 @@
 
 <script>
 // ══════════════════════════════════════════════
-// CONFIG — update counts to match how many
-// images you have in each folder
+// CONFIG
 // ══════════════════════════════════════════════
 const JSONBIN_BIN_ID  = '69eb4efc36566621a8e88123';
 const JSONBIN_API_KEY = '$2a$10$sCm91ckOORlp0QCXJEViYOPVJZCTJJlb9e./P21Ei49Sc2wzUaFeG';
@@ -390,12 +389,6 @@ const JSONBIN_BASE    = 'https://api.jsonbin.io/v3/b';
 
 const CHANNELS     = ['4.3 µm', '15 µm High', '15 µm Low'];
 const CHANNEL_DIRS = ['4mu', '15h', '15l'];
-
-// Set these to however many images you have in each folder
-const NOISE_REAL_COUNT = 15;
-const NOISE_FAKE_COUNT = 15;
-const GRAN_REAL_COUNT  = 30;
-const GRAN_FAKE_COUNT  = 30;
 
 // How many to show per round
 const NOISE_DRAW = 5;
@@ -408,17 +401,34 @@ let channel, chDir;
 let noiseQueue, granQueue;
 let noiseIdx, granIdx;
 let noiseScore, granScore;
+let manifest = null;
 
 // ══════════════════════════════════════════════
-// IMAGE POOL — sequential filenames, randomly sampled
+// MANIFEST — load once, use everywhere
 // ══════════════════════════════════════════════
-function makePool(prefix, chDir, count, answer) {
-  // Build full list of sequential filenames then shuffle
-  const all = Array.from({length: count}, (_, i) => ({
-    src:    `images/${prefix}/${chDir}/${prefix}_${chDir}_${String(i+1).padStart(3,'0')}.png`,
+async function loadManifest() {
+  if (manifest) return manifest;
+  try {
+    const r = await fetch('manifest.json');
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    manifest = await r.json();
+    console.log('[Manifest] Loaded OK');
+  } catch (e) {
+    console.warn('[Manifest] Failed to load:', e);
+    manifest = {};
+  }
+  return manifest;
+}
+
+// ══════════════════════════════════════════════
+// IMAGE POOL — filenames sourced from manifest
+// ══════════════════════════════════════════════
+function makePool(prefix, chDir, answer) {
+  const files = (manifest[prefix] || {})[chDir] || [];
+  return shuffle(files.map(filename => ({
+    src:    `images/${prefix}/${chDir}/${filename}`,
     answer: answer
-  }));
-  return shuffle(all);
+  })));
 }
 
 // ══════════════════════════════════════════════
@@ -503,7 +513,8 @@ function showScreen(id) {
 // ══════════════════════════════════════════════
 // QUIZ FLOW
 // ══════════════════════════════════════════════
-function startQuiz() {
+async function startQuiz() {
+  await loadManifest();
   const idx = Math.floor(Math.random() * 3);
   channel = CHANNELS[idx];
   chDir   = CHANNEL_DIRS[idx];
@@ -516,8 +527,8 @@ function startQuiz() {
 function startNoiseQuiz() {
   noiseScore = 0; noiseIdx = 0;
   // Shuffle each pool independently then interleave and take NOISE_DRAW
-  const real = makePool('noise_real', chDir, NOISE_REAL_COUNT, 'real');
-  const fake = makePool('noise_fake', chDir, NOISE_FAKE_COUNT, 'fake');
+  const real = makePool('noise_real', chDir, 'real');
+  const fake = makePool('noise_fake', chDir, 'fake');
   noiseQueue = shuffle([...real, ...fake]).slice(0, NOISE_DRAW);
   showScreen('screen-noise-q');
   renderNoiseQ();
@@ -571,8 +582,8 @@ function noiseMessage(s) {
 // ── GRANULE ───────────────────────────────────
 function startGranuleQuiz() {
   granScore = 0; granIdx = 0;
-  const real = makePool('granule_real', chDir, GRAN_REAL_COUNT, 'real');
-  const fake = makePool('granule_fake', chDir, GRAN_FAKE_COUNT, 'fake');
+  const real = makePool('granule_real', chDir, 'real');
+  const fake = makePool('granule_fake', chDir, 'fake');
   granQueue = shuffle([...real, ...fake]).slice(0, GRAN_DRAW);
   showScreen('screen-granule-q');
   renderGranQ();
