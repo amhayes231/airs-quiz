@@ -239,16 +239,6 @@
     margin-top: 8px;
     min-height: 18px;
   }
-
-  .loading-screen {
-    text-align: center;
-    padding: 40px 0;
-  }
-  .loading-screen p {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.85rem;
-    color: var(--muted);
-  }
 </style>
 </head>
 <body>
@@ -265,7 +255,7 @@
   </p>
   <hr class="divider">
   <p style="font-size:0.85rem;">One channel assigned randomly at the start. Each visitor gets a different one.</p>
-  <button class="btn" id="start-btn" onclick="startQuiz()" disabled>Loading images...</button>
+  <button class="btn" onclick="startQuiz()">Let's go →</button>
 </div>
 
 <!-- SCREEN 1 — CHANNEL -->
@@ -400,9 +390,16 @@ const JSONBIN_BASE    = 'https://api.jsonbin.io/v3/b';
 const CHANNELS     = ['4.3 µm', '15 µm High', '15 µm Low'];
 const CHANNEL_DIRS = ['4mu', '15h', '15l'];
 
-// Minimum images needed to run each round
-const NOISE_DRAW = 5;
-const GRAN_DRAW  = 10;
+const NOISE_REAL_COUNT = 15;
+const NOISE_FAKE_COUNT = 15;
+const GRAN_REAL_COUNT  = 30;
+const GRAN_FAKE_COUNT  = 30;
+
+function makeFilenames(prefix, chDir, count) {
+  return Array.from({length: count}, (_, i) =>
+    `images/${prefix}/${chDir}/${prefix}_${chDir}_${String(i+1).padStart(3,'0')}.png`
+  );
+}
 
 // ══════════════════════════════════════════════
 // STATE
@@ -411,44 +408,6 @@ let channel, chDir;
 let noiseQueue, granQueue;
 let noiseIdx, granIdx;
 let noiseScore, granScore;
-let manifest = null;
-
-// ══════════════════════════════════════════════
-// MANIFEST — load on page start
-// ══════════════════════════════════════════════
-async function loadManifest() {
-  try {
-    console.log('[Manifest] Loading...');
-    const r = await fetch('images/manifest.json');
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    manifest = await r.json();
-    console.log('[Manifest] Loaded:', manifest);
-
-    // Enable start button
-    const btn = document.getElementById('start-btn');
-    btn.textContent = "Let's go →";
-    btn.disabled    = false;
-  } catch(e) {
-    console.warn('[Manifest] Failed to load:', e);
-    // Fall back — allow start anyway, images may 404 individually
-    const btn = document.getElementById('start-btn');
-    btn.textContent = "Let's go →";
-    btn.disabled    = false;
-  }
-}
-
-// Build image pool from manifest for a given category and channel dir
-// Returns array of {src, answer} objects
-function buildPool(category, chDir, answer) {
-  if (!manifest || !manifest[category] || !manifest[category][chDir]) {
-    console.warn(`[Manifest] No entries for ${category}/${chDir}`);
-    return [];
-  }
-  return manifest[category][chDir].map(fname => ({
-    src:    `images/${category}/${chDir}/${fname}`,
-    answer: answer
-  }));
-}
 
 // ══════════════════════════════════════════════
 // JSONBIN STORAGE
@@ -470,6 +429,7 @@ async function loadScores() {
     }
     const data = await r.json();
     console.log('[JSONBin] Loaded data:', data);
+    // Ensure all expected keys exist
     return {
       channel: data.channel || [],
       noise:   data.noise   || [],
@@ -485,12 +445,15 @@ async function loadScores() {
 async function saveScore(ch, n, g) {
   try {
     console.log('[JSONBin] Saving — channel:', ch, 'noise:', n, 'gran:', g);
+
     const scores = await loadScores();
     scores.channel.push(ch);
     scores.noise.push(n);
     scores.gran.push(g);
     scores.total.push(n + g);
+
     console.log('[JSONBin] Writing updated scores:', scores);
+
     const r = await fetch(`${JSONBIN_BASE}/${JSONBIN_BIN_ID}`, {
       method:  'PUT',
       headers: {
@@ -500,9 +463,11 @@ async function saveScore(ch, n, g) {
       },
       body: JSON.stringify(scores)
     });
+
     console.log('[JSONBin] Save status:', r.status);
     const result = await r.json();
     console.log('[JSONBin] Save result:', result);
+
     if (!r.ok) throw new Error(`HTTP ${r.status}: ${JSON.stringify(result)}`);
     return scores;
   } catch(e) {
@@ -544,13 +509,9 @@ function startQuiz() {
 // ── NOISE ─────────────────────────────────────
 function startNoiseQuiz() {
   noiseScore = 0; noiseIdx = 0;
-
-  const real = buildPool('noise_real', chDir, 'real');
-  const fake = buildPool('noise_fake', chDir, 'fake');
-  noiseQueue = shuffle([...real, ...fake]).slice(0, NOISE_DRAW);
-
-  console.log(`[Quiz] Noise pool: ${real.length} real, ${fake.length} fake. Drawing ${noiseQueue.length}.`);
-
+  const real = makeFilenames('noise_real', chDir, NOISE_REAL_COUNT).map(src => ({src, answer:'real'}));
+  const fake = makeFilenames('noise_fake', chDir, NOISE_FAKE_COUNT).map(src => ({src, answer:'fake'}));
+  noiseQueue = shuffle([...real, ...fake]).slice(0, 5);
   showScreen('screen-noise-q');
   renderNoiseQ();
 }
@@ -558,8 +519,8 @@ function startNoiseQuiz() {
 function renderNoiseQ() {
   const q = noiseQueue[noiseIdx];
   document.getElementById('noise-img').src = q.src;
-  document.getElementById('noise-progress-label').textContent = `Question ${noiseIdx + 1} of ${noiseQueue.length}`;
-  document.getElementById('noise-progress-bar').style.width   = `${(noiseIdx / noiseQueue.length) * 100}%`;
+  document.getElementById('noise-progress-label').textContent = `Question ${noiseIdx + 1} of 5`;
+  document.getElementById('noise-progress-bar').style.width   = `${(noiseIdx / 5) * 100}%`;
   const fb = document.getElementById('noise-feedback');
   fb.style.display = 'none'; fb.className = 'feedback-box';
   document.getElementById('noise-btn-row').style.display  = 'grid';
@@ -578,17 +539,16 @@ function answerNoise(guess) {
   fb.style.display = 'block';
   document.getElementById('noise-btn-row').style.display  = 'none';
   document.getElementById('noise-next-btn').style.display = 'block';
-  document.getElementById('noise-next-btn').textContent   =
-    noiseIdx < noiseQueue.length - 1 ? 'Next →' : 'See results →';
+  document.getElementById('noise-next-btn').textContent   = noiseIdx < 4 ? 'Next →' : 'See results →';
 }
 
 function nextNoise() {
   noiseIdx++;
-  noiseIdx < noiseQueue.length ? renderNoiseQ() : showNoiseResults();
+  noiseIdx < 5 ? renderNoiseQ() : showNoiseResults();
 }
 
 function showNoiseResults() {
-  document.getElementById('noise-score-display').textContent = `${noiseScore} / ${noiseQueue.length}`;
+  document.getElementById('noise-score-display').textContent = `${noiseScore} / 5`;
   document.getElementById('noise-score-msg').textContent     = noiseMessage(noiseScore);
   showScreen('screen-noise-results');
 }
@@ -604,13 +564,9 @@ function noiseMessage(s) {
 // ── GRANULE ───────────────────────────────────
 function startGranuleQuiz() {
   granScore = 0; granIdx = 0;
-
-  const real = buildPool('granule_real', chDir, 'real');
-  const fake = buildPool('granule_fake', chDir, 'fake');
-  granQueue = shuffle([...real, ...fake]).slice(0, GRAN_DRAW);
-
-  console.log(`[Quiz] Granule pool: ${real.length} real, ${fake.length} fake. Drawing ${granQueue.length}.`);
-
+  const real = makeFilenames('granule_real', chDir, GRAN_REAL_COUNT).map(src => ({src, answer:'real'}));
+  const fake = makeFilenames('granule_fake', chDir, GRAN_FAKE_COUNT).map(src => ({src, answer:'fake'}));
+  granQueue = shuffle([...real, ...fake]).slice(0, 10);
   showScreen('screen-granule-q');
   renderGranQ();
 }
@@ -618,8 +574,8 @@ function startGranuleQuiz() {
 function renderGranQ() {
   const q = granQueue[granIdx];
   document.getElementById('gran-img').src = q.src;
-  document.getElementById('gran-progress-label').textContent = `Question ${granIdx + 1} of ${granQueue.length}`;
-  document.getElementById('gran-progress-bar').style.width   = `${(granIdx / granQueue.length) * 100}%`;
+  document.getElementById('gran-progress-label').textContent = `Question ${granIdx + 1} of 10`;
+  document.getElementById('gran-progress-bar').style.width   = `${(granIdx / 10) * 100}%`;
   const fb = document.getElementById('gran-feedback');
   fb.style.display = 'none'; fb.className = 'feedback-box';
   document.getElementById('gran-btn-row').style.display  = 'grid';
@@ -638,17 +594,16 @@ function answerGran(guess) {
   fb.style.display = 'block';
   document.getElementById('gran-btn-row').style.display  = 'none';
   document.getElementById('gran-next-btn').style.display = 'block';
-  document.getElementById('gran-next-btn').textContent   =
-    granIdx < granQueue.length - 1 ? 'Next →' : 'See results →';
+  document.getElementById('gran-next-btn').textContent   = granIdx < 9 ? 'Next →' : 'See results →';
 }
 
 function nextGran() {
   granIdx++;
-  granIdx < granQueue.length ? renderGranQ() : showGranResults();
+  granIdx < 10 ? renderGranQ() : showGranResults();
 }
 
 function showGranResults() {
-  document.getElementById('gran-score-display').textContent = `${granScore} / ${granQueue.length}`;
+  document.getElementById('gran-score-display').textContent = `${granScore} / 10`;
   document.getElementById('gran-score-msg').textContent     = granMessage(granScore);
   showScreen('screen-gran-results');
 }
@@ -668,12 +623,13 @@ async function showFinalResults() {
 
   document.getElementById('final-score-display').textContent = `${total} / 15`;
   document.getElementById('final-score-msg').textContent     = finalMessage(total);
-  document.getElementById('breakdown-noise').textContent     = `${noiseScore} / ${noiseQueue.length}`;
-  document.getElementById('breakdown-gran').textContent      = `${granScore} / ${granQueue.length}`;
+  document.getElementById('breakdown-noise').textContent     = `${noiseScore} / 5`;
+  document.getElementById('breakdown-gran').textContent      = `${granScore} / 10`;
   document.getElementById('saving-msg').textContent          = 'Saving your score...';
 
   showScreen('screen-final');
 
+  // Pass channel name into saveScore
   const scores = await saveScore(channel, noiseScore, granScore);
   const msg    = document.getElementById('saving-msg');
 
@@ -776,11 +732,6 @@ function drawDist(canvasId, allScores, myScore, maxScore, nId, avgId) {
   document.getElementById(nId).textContent  = `${total} player${total !== 1 ? 's' : ''}`;
   document.getElementById(avgId).textContent = `avg ${avg}`;
 }
-
-// ══════════════════════════════════════════════
-// INIT — load manifest on page load
-// ══════════════════════════════════════════════
-loadManifest();
 </script>
 </body>
 </html>
