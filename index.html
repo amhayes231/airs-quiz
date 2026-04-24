@@ -5,12 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Real or Fake? — AIRS Quiz</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;600&display=swap');
+
+  :root {
+    --bg:       #0a0c12;
+    --surface:  #12151f;
+    --surface2: #1a1e2e;
+    --border:   #252840;
+    --accent:   #4f8ef7;
+    --gold:     #f7c94f;
+    --green:    #2ecc71;
+    --red:      #e74c3c;
+    --pink:     #f74f8e;
+    --text:     #e8eaf0;
+    --muted:    #6b7094;
+  }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: #0f1117;
-    color: #f0f0f0;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -21,225 +37,255 @@
   .screen {
     display: none;
     width: 100%;
-    max-width: 480px;
+    max-width: 500px;
     text-align: center;
-    animation: fadeIn 0.3s ease;
+    animation: fadeUp 0.35s ease both;
   }
   .screen.active { display: block; }
 
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 
-  h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
-  h2 { font-size: 1.4rem; font-weight: 600; margin-bottom: 12px; }
-  p  { font-size: 1rem; line-height: 1.6; color: #ccc; margin-bottom: 16px; }
+  h1 { font-family: 'Space Mono', monospace; font-size: 1.9rem; font-weight: 700; margin-bottom: 10px; line-height: 1.2; }
+  h2 { font-family: 'Space Mono', monospace; font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; }
+  p  { font-size: 0.97rem; line-height: 1.65; color: #b0b4cc; margin-bottom: 14px; }
 
   .badge {
     display: inline-block;
-    background: #1e90ff22;
-    border: 1px solid #1e90ff55;
-    color: #7ec8ff;
+    background: #4f8ef720;
+    border: 1px solid #4f8ef750;
+    color: var(--accent);
     border-radius: 20px;
     padding: 4px 14px;
-    font-size: 0.85rem;
-    margin-bottom: 20px;
+    font-size: 0.8rem;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.05em;
+    margin-bottom: 18px;
   }
 
   .channel-badge {
     display: inline-block;
-    background: #ff8c0022;
-    border: 1px solid #ff8c0055;
-    color: #ffb347;
+    background: #f7c94f20;
+    border: 1px solid #f7c94f50;
+    color: var(--gold);
     border-radius: 20px;
-    padding: 6px 18px;
+    padding: 7px 20px;
     font-size: 1rem;
-    font-weight: 600;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
     margin-bottom: 20px;
   }
 
   .btn {
-    display: inline-block;
-    background: #1e90ff;
+    display: block;
+    width: 100%;
+    background: var(--accent);
     color: #fff;
     border: none;
-    border-radius: 12px;
-    padding: 14px 32px;
-    font-size: 1.1rem;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    width: 100%;
-    margin-top: 8px;
+    transition: background 0.18s, transform 0.1s;
+    margin-top: 10px;
   }
-  .btn:hover  { background: #1a7ee0; }
+  .btn:hover  { background: #3a7ae8; }
   .btn:active { transform: scale(0.97); }
 
-  .btn-real { background: #2ecc71; }
+  .btn-real { background: var(--green); }
   .btn-real:hover { background: #27ae60; }
-  .btn-fake { background: #e74c3c; }
+  .btn-fake { background: var(--red); }
   .btn-fake:hover { background: #c0392b; }
-  .btn-secondary { background: #2a2d3a; border: 1px solid #444; }
-  .btn-secondary:hover { background: #333649; }
+  .btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .btn-ghost:hover { background: var(--surface2); color: var(--text); }
 
   .btn-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 16px;
+    gap: 10px;
+    margin-top: 14px;
   }
 
   .granule-img {
     width: 100%;
-    border-radius: 12px;
-    border: 2px solid #2a2d3a;
-    margin-bottom: 16px;
-    image-rendering: pixelated;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    margin-bottom: 14px;
+    display: block;
   }
 
-  .progress-bar-wrap {
-    background: #1e2030;
-    border-radius: 8px;
-    height: 6px;
-    margin-bottom: 20px;
+  .progress-wrap {
+    background: var(--surface2);
+    border-radius: 6px;
+    height: 5px;
+    margin-bottom: 18px;
     overflow: hidden;
   }
-  .progress-bar-fill {
+  .progress-fill {
     height: 100%;
-    background: #1e90ff;
-    border-radius: 8px;
+    background: var(--accent);
+    border-radius: 6px;
     transition: width 0.4s ease;
   }
-
   .progress-label {
-    font-size: 0.85rem;
-    color: #888;
-    margin-bottom: 8px;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-family: 'Space Mono', monospace;
   }
 
   .feedback-box {
-    border-radius: 12px;
-    padding: 14px;
-    margin-bottom: 16px;
-    font-size: 1rem;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    font-size: 0.95rem;
     font-weight: 600;
     display: none;
+    text-align: left;
   }
-  .feedback-correct {
-    background: #2ecc7122;
-    border: 1px solid #2ecc71aa;
-    color: #2ecc71;
-  }
-  .feedback-wrong {
-    background: #e74c3c22;
-    border: 1px solid #e74c3caa;
-    color: #e74c3c;
-  }
+  .fb-correct { background: #2ecc7118; border: 1px solid #2ecc7155; color: var(--green); }
+  .fb-wrong   { background: #e74c3c18; border: 1px solid #e74c3c55; color: var(--red); }
 
   .score-big {
-    font-size: 3.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 4rem;
     font-weight: 700;
-    margin: 12px 0;
+    margin: 10px 0;
+    color: var(--accent);
   }
   .score-msg {
-    font-size: 1.1rem;
-    color: #ccc;
-    margin-bottom: 24px;
-    line-height: 1.5;
+    font-size: 1rem;
+    color: #b0b4cc;
+    margin-bottom: 22px;
+    line-height: 1.6;
   }
 
   .score-breakdown {
-    background: #1e2030;
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     text-align: left;
   }
-  .score-breakdown p {
-    margin-bottom: 6px;
-    color: #aaa;
-    font-size: 0.95rem;
-  }
-  .score-breakdown span { color: #f0f0f0; font-weight: 600; }
+  .score-breakdown p { margin-bottom: 6px; font-size: 0.9rem; }
+  .score-breakdown span { color: var(--text); font-weight: 600; }
 
-  .divider {
-    border: none;
-    border-top: 1px solid #2a2d3a;
-    margin: 20px 0;
-  }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
 
-  .quiz-title {
-    font-size: 0.8rem;
+  .quiz-label {
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #666;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
     margin-bottom: 6px;
+  }
+
+  .chart-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .chart-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-align: left;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  canvas.dist-canvas { width: 100%; height: 90px; display: block; }
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 6px;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .chart-legend {
+    display: flex;
+    gap: 16px;
+    margin: 10px 0 4px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    justify-content: center;
+  }
+  .legend-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: middle;
   }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
-     SCREEN 0 — LANDING
-     ═══════════════════════════════════════════ -->
+<!-- SCREEN 0 — LANDING -->
 <div class="screen active" id="screen-landing">
-  <h1>🛰️ Real or Fake?</h1>
-  <p style="margin-top:8px;">Can you tell real AIRS satellite observations from synthetic ones?</p>
+  <p class="quiz-label">EGU 2026</p>
+  <h1>🛰️ Real<br>or Fake?</h1>
+  <p style="margin-top:6px;">Can you tell real AIRS satellite observations from synthetic ones?</p>
   <hr class="divider">
-  <p>You'll face <strong style="color:#f0f0f0;">two rounds</strong>:</p>
   <p>
-    <strong style="color:#f0f0f0;">Round 1</strong> — 5 questions: Real AIRS noise vs synthetic noise<br>
-    <strong style="color:#f0f0f0;">Round 2</strong> — 10 questions: Real AIRS granule vs synthetic GEOS-as-AIRS
+    <strong style="color:var(--text)">Round 1</strong> — 5 noise maps: real vs synthetic<br>
+    <strong style="color:var(--text)">Round 2</strong> — 10 granules: real AIRS vs GEOS-as-AIRS
   </p>
   <hr class="divider">
-  <p style="font-size:0.9rem;">You'll be shown one channel throughout, assigned randomly at the start.</p>
+  <p style="font-size:0.85rem;">One channel assigned randomly at the start. Each visitor gets a different one.</p>
   <button class="btn" onclick="startQuiz()">Let's go →</button>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     SCREEN 1 — CHANNEL ASSIGNMENT
-     ═══════════════════════════════════════════ -->
+<!-- SCREEN 1 — CHANNEL -->
 <div class="screen" id="screen-channel">
-  <p class="quiz-title">Your channel</p>
+  <p class="quiz-label">Your channel</p>
   <h2>You've been assigned</h2>
   <div class="channel-badge" id="channel-display"></div>
-  <p>All images in both rounds will be from this channel.<br>Each visitor sees a different one!</p>
+  <p>All images in both rounds will be from this channel. Each visitor sees a different one!</p>
   <button class="btn" onclick="showScreen('screen-q1-intro')">Got it →</button>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     SCREEN 2 — QUIZ 1 INTRO
-     ═══════════════════════════════════════════ -->
+<!-- SCREEN 2 — NOISE INTRO -->
 <div class="screen" id="screen-q1-intro">
   <div class="badge">Round 1 of 2</div>
-  <h1> Noise Quiz</h1>
+  <h1>🌊 Noise Quiz</h1>
   <p>You'll see 5 noise maps. Each one is either real AIRS instrument noise or synthetically generated noise designed to mimic it.</p>
-  <p style="color:#ffb347;">Can your eyes tell the difference?</p>
+  <p style="color:var(--gold)">Can your eyes tell the difference?</p>
   <button class="btn" onclick="startNoiseQuiz()">Start Round 1 →</button>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     SCREEN 3 — NOISE QUESTION
-     ═══════════════════════════════════════════ -->
+<!-- SCREEN 3 — NOISE QUESTION -->
 <div class="screen" id="screen-noise-q">
-  <div class="quiz-title">Round 1 — Noise</div>
+  <div class="quiz-label">Round 1 — Noise</div>
   <div class="progress-label" id="noise-progress-label"></div>
-  <div class="progress-bar-wrap">
-    <div class="progress-bar-fill" id="noise-progress-bar"></div>
-  </div>
+  <div class="progress-wrap"><div class="progress-fill" id="noise-progress-bar"></div></div>
   <img class="granule-img" id="noise-img" src="" alt="Noise map">
   <div class="feedback-box" id="noise-feedback"></div>
   <div class="btn-row" id="noise-btn-row">
     <button class="btn btn-real" onclick="answerNoise('real')">Real AIRS noise</button>
     <button class="btn btn-fake" onclick="answerNoise('fake')">Synthetic noise</button>
   </div>
-  <button class="btn btn-secondary" id="noise-next-btn" style="display:none;margin-top:12px;" onclick="nextNoise()">Next →</button>
+  <button class="btn btn-ghost" id="noise-next-btn" style="display:none;margin-top:12px;" onclick="nextNoise()">Next →</button>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     SCREEN 4 — NOISE RESULTS
-     ═══════════════════════════════════════════ -->
+<!-- SCREEN 4 — NOISE RESULTS -->
 <div class="screen" id="screen-noise-results">
   <div class="badge">Round 1 complete</div>
-  <h2>Noise quiz done!</h2>
+  <h2>Noise round done!</h2>
   <div class="score-big" id="noise-score-display"></div>
   <div class="score-msg" id="noise-score-msg"></div>
   <hr class="divider">
@@ -247,66 +293,93 @@
   <button class="btn" onclick="showScreen('screen-q2-intro')">On to Round 2 →</button>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     SCREEN 5 — QUIZ 2 INTRO
-     ═══════════════════════════════════════════ -->
+<!-- SCREEN 5 — GRANULE INTRO -->
 <div class="screen" id="screen-q2-intro">
   <div class="badge">Round 2 of 2</div>
-  <h1>Granule Quiz</h1>
+  <h1>🌍 Granule Quiz</h1>
   <p>You'll see 10 brightness temperature granules. Each one is either a real AIRS observation or a synthetic GEOS-as-AIRS granule with added noise.</p>
-  <p style="color:#ffb347;">Both show gravity waves — the question is which one came from space.</p>
+  <p style="color:var(--gold)">Both show gravity waves. The question is which one came from space.</p>
   <button class="btn" onclick="startGranuleQuiz()">Start Round 2 →</button>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     SCREEN 6 — GRANULE QUESTION
-     ═══════════════════════════════════════════ -->
+<!-- SCREEN 6 — GRANULE QUESTION -->
 <div class="screen" id="screen-granule-q">
-  <div class="quiz-title">Round 2 — Granule</div>
+  <div class="quiz-label">Round 2 — Granule</div>
   <div class="progress-label" id="gran-progress-label"></div>
-  <div class="progress-bar-wrap">
-    <div class="progress-bar-fill" id="gran-progress-bar"></div>
-  </div>
+  <div class="progress-wrap"><div class="progress-fill" id="gran-progress-bar"></div></div>
   <img class="granule-img" id="gran-img" src="" alt="Granule">
   <div class="feedback-box" id="gran-feedback"></div>
   <div class="btn-row" id="gran-btn-row">
     <button class="btn btn-real" onclick="answerGran('real')">Real AIRS</button>
     <button class="btn btn-fake" onclick="answerGran('fake')">Synthetic</button>
   </div>
-  <button class="btn btn-secondary" id="gran-next-btn" style="display:none;margin-top:12px;" onclick="nextGran()">Next →</button>
+  <button class="btn btn-ghost" id="gran-next-btn" style="display:none;margin-top:12px;" onclick="nextGran()">Next →</button>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     SCREEN 7 — FINAL RESULTS
-     ═══════════════════════════════════════════ -->
+<!-- SCREEN 7 — GRANULE RESULTS -->
+<div class="screen" id="screen-gran-results">
+  <div class="badge">Round 2 complete</div>
+  <h2>Granule round done!</h2>
+  <div class="score-big" id="gran-score-display"></div>
+  <div class="score-msg" id="gran-score-msg"></div>
+  <hr class="divider">
+  <p>Let's see how you did overall.</p>
+  <button class="btn" onclick="showFinalResults()">See final score →</button>
+</div>
+
+<!-- SCREEN 8 — FINAL -->
 <div class="screen" id="screen-final">
-  <div class="badge">Quiz complete!</div>
+  <div class="badge">Quiz complete</div>
   <h1>🏆 Final Score</h1>
   <div class="score-big" id="final-score-display"></div>
   <div class="score-msg" id="final-score-msg"></div>
+
   <div class="score-breakdown">
     <p>Round 1 — Noise: <span id="breakdown-noise"></span></p>
     <p>Round 2 — Granule: <span id="breakdown-gran"></span></p>
-    <p style="margin-top:10px;font-size:0.8rem;color:#666;">Channel: <span id="breakdown-channel"></span></p>
+    <p style="margin-top:8px;font-size:0.8rem;color:var(--muted)">Channel: <span id="breakdown-channel"></span></p>
   </div>
-  <button class="btn btn-secondary" onclick="resetQuiz()">Play again</button>
+
+  <hr class="divider">
+  <p style="font-size:0.85rem;margin-bottom:14px;">How do you compare to everyone else who's played?</p>
+
+  <div class="chart-legend">
+    <span><span class="legend-dot" style="background:#4f8ef7"></span>All players</span>
+    <span><span class="legend-dot" style="background:#f74f8e"></span>You</span>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Noise score — out of 5</div>
+    <canvas class="dist-canvas" id="chart-noise"></canvas>
+    <div class="stat-row"><span id="stat-noise-n"></span><span id="stat-noise-avg"></span></div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Granule score — out of 10</div>
+    <canvas class="dist-canvas" id="chart-gran"></canvas>
+    <div class="stat-row"><span id="stat-gran-n"></span><span id="stat-gran-avg"></span></div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Final score — out of 15</div>
+    <canvas class="dist-canvas" id="chart-final"></canvas>
+    <div class="stat-row"><span id="stat-final-n"></span><span id="stat-final-avg"></span></div>
+  </div>
+
+  <button class="btn btn-ghost" onclick="resetQuiz()" style="margin-top:6px;">Play again</button>
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════
-// CONFIG — image filenames per channel per category
-// Update these arrays when you add images to the repo
-// ═══════════════════════════════════════════════════
-
-const CHANNELS = ['4.3 µm', '15 µm High', '15 µm Low'];
+// ══════════════════════════════════════════════
+// CONFIG
+// ══════════════════════════════════════════════
+const CHANNELS     = ['4.3 µm', '15 µm High', '15 µm Low'];
 const CHANNEL_DIRS = ['4mu', '15h', '15l'];
 
-// Image pools — filenames only, paths constructed at runtime
-// noise_real/4mu/noise_real_4mu_001.png etc.
-const NOISE_REAL_COUNT  = 15;
-const NOISE_FAKE_COUNT  = 15;
-const GRAN_REAL_COUNT   = 30;
-const GRAN_FAKE_COUNT   = 30;
+const NOISE_REAL_COUNT = 15;
+const NOISE_FAKE_COUNT = 15;
+const GRAN_REAL_COUNT  = 30;
+const GRAN_FAKE_COUNT  = 30;
 
 function makeFilenames(prefix, chDir, count) {
   return Array.from({length: count}, (_, i) =>
@@ -314,18 +387,43 @@ function makeFilenames(prefix, chDir, count) {
   );
 }
 
-// ═══════════════════════════════
+// ══════════════════════════════════════════════
 // STATE
-// ═══════════════════════════════
+// ══════════════════════════════════════════════
 let channel, chDir;
-let noisePool, granPool;
 let noiseQueue, granQueue;
 let noiseIdx, granIdx;
 let noiseScore, granScore;
 
-// ═══════════════════════════════
+// ══════════════════════════════════════════════
+// STORAGE — shared leaderboard
+// ══════════════════════════════════════════════
+const STORAGE_KEY = 'airs-quiz-scores-v1';
+
+async function loadScores() {
+  try {
+    const r = await window.storage.get(STORAGE_KEY, true);
+    return r ? JSON.parse(r.value) : { noise: [], gran: [], total: [] };
+  } catch {
+    return { noise: [], gran: [], total: [] };
+  }
+}
+
+async function saveScore(n, g) {
+  try {
+    const scores = await loadScores();
+    scores.noise.push(n);
+    scores.gran.push(g);
+    scores.total.push(n + g);
+    await window.storage.set(STORAGE_KEY, JSON.stringify(scores), true);
+  } catch(e) {
+    console.warn('Storage unavailable:', e);
+  }
+}
+
+// ══════════════════════════════════════════════
 // UTILS
-// ═══════════════════════════════
+// ══════════════════════════════════════════════
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -341,32 +439,24 @@ function showScreen(id) {
   window.scrollTo(0, 0);
 }
 
-// ═══════════════════════════════
+// ══════════════════════════════════════════════
 // QUIZ FLOW
-// ═══════════════════════════════
+// ══════════════════════════════════════════════
 function startQuiz() {
-  // Assign channel randomly
   const idx = Math.floor(Math.random() * 3);
   channel = CHANNELS[idx];
   chDir   = CHANNEL_DIRS[idx];
-
-  document.getElementById('channel-display').textContent = channel;
-  document.getElementById('breakdown-channel').textContent = channel;
-
+  document.getElementById('channel-display').textContent     = channel;
+  document.getElementById('breakdown-channel').textContent   = channel;
   showScreen('screen-channel');
 }
 
+// ── NOISE ─────────────────────────────────────
 function startNoiseQuiz() {
-  noiseScore = 0;
-  noiseIdx   = 0;
-
-  // Build pool: label each image real/fake, shuffle, take 5
-  const realImgs = makeFilenames('noise_real', chDir, NOISE_REAL_COUNT)
-                     .map(src => ({src, answer: 'real'}));
-  const fakeImgs = makeFilenames('noise_fake', chDir, NOISE_FAKE_COUNT)
-                     .map(src => ({src, answer: 'fake'}));
-
-  noiseQueue = shuffle([...realImgs, ...fakeImgs]).slice(0, 5);
+  noiseScore = 0; noiseIdx = 0;
+  const real = makeFilenames('noise_real', chDir, NOISE_REAL_COUNT).map(src => ({src, answer:'real'}));
+  const fake = makeFilenames('noise_fake', chDir, NOISE_FAKE_COUNT).map(src => ({src, answer:'fake'}));
+  noiseQueue = shuffle([...real, ...fake]).slice(0, 5);
   showScreen('screen-noise-q');
   renderNoiseQ();
 }
@@ -374,16 +464,11 @@ function startNoiseQuiz() {
 function renderNoiseQ() {
   const q = noiseQueue[noiseIdx];
   document.getElementById('noise-img').src = q.src;
-  document.getElementById('noise-progress-label').textContent =
-    `Question ${noiseIdx + 1} of 5`;
-  document.getElementById('noise-progress-bar').style.width =
-    `${(noiseIdx / 5) * 100}%`;
-
-  // Reset feedback and buttons
+  document.getElementById('noise-progress-label').textContent = `Question ${noiseIdx + 1} of 5`;
+  document.getElementById('noise-progress-bar').style.width   = `${(noiseIdx / 5) * 100}%`;
   const fb = document.getElementById('noise-feedback');
-  fb.style.display = 'none';
-  fb.className = 'feedback-box';
-  document.getElementById('noise-btn-row').style.display = 'grid';
+  fb.style.display = 'none'; fb.className = 'feedback-box';
+  document.getElementById('noise-btn-row').style.display  = 'grid';
   document.getElementById('noise-next-btn').style.display = 'none';
 }
 
@@ -391,34 +476,25 @@ function answerNoise(guess) {
   const correct = noiseQueue[noiseIdx].answer;
   const right   = guess === correct;
   if (right) noiseScore++;
-
   const fb = document.getElementById('noise-feedback');
-  fb.textContent   = right
-    ? '✓ Correct! ' + (correct === 'real' ? 'That was real AIRS noise.' : 'That was synthetic noise.')
-    : '✗ Wrong! ' + (correct === 'real' ? 'That was actually real AIRS noise.' : 'That was actually synthetic noise.');
-  fb.className     = 'feedback-box ' + (right ? 'feedback-correct' : 'feedback-wrong');
+  fb.textContent = right
+    ? '✓ Correct! ' + (correct==='real' ? 'That was real AIRS noise.' : 'That was synthetic noise.')
+    : '✗ Wrong! '  + (correct==='real' ? 'That was actually real AIRS noise.' : 'That was actually synthetic noise.');
+  fb.className = 'feedback-box ' + (right ? 'fb-correct' : 'fb-wrong');
   fb.style.display = 'block';
-
-  document.getElementById('noise-btn-row').style.display = 'none';
+  document.getElementById('noise-btn-row').style.display  = 'none';
   document.getElementById('noise-next-btn').style.display = 'block';
-  document.getElementById('noise-next-btn').textContent =
-    noiseIdx < 4 ? 'Next →' : 'See results →';
+  document.getElementById('noise-next-btn').textContent   = noiseIdx < 4 ? 'Next →' : 'See results →';
 }
 
 function nextNoise() {
   noiseIdx++;
-  if (noiseIdx < 5) {
-    renderNoiseQ();
-  } else {
-    showNoiseResults();
-  }
+  noiseIdx < 5 ? renderNoiseQ() : showNoiseResults();
 }
 
 function showNoiseResults() {
-  document.getElementById('noise-score-display').textContent =
-    `${noiseScore} / 5`;
-  document.getElementById('noise-score-msg').textContent =
-    noiseMessage(noiseScore);
+  document.getElementById('noise-score-display').textContent = `${noiseScore} / 5`;
+  document.getElementById('noise-score-msg').textContent     = noiseMessage(noiseScore);
   showScreen('screen-noise-results');
 }
 
@@ -430,16 +506,12 @@ function noiseMessage(s) {
   return "Don't worry, even our model found this hard at first. 😅";
 }
 
+// ── GRANULE ───────────────────────────────────
 function startGranuleQuiz() {
-  granScore = 0;
-  granIdx   = 0;
-
-  const realImgs = makeFilenames('granule_real', chDir, GRAN_REAL_COUNT)
-                     .map(src => ({src, answer: 'real'}));
-  const fakeImgs = makeFilenames('granule_fake', chDir, GRAN_FAKE_COUNT)
-                     .map(src => ({src, answer: 'fake'}));
-
-  granQueue = shuffle([...realImgs, ...fakeImgs]).slice(0, 10);
+  granScore = 0; granIdx = 0;
+  const real = makeFilenames('granule_real', chDir, GRAN_REAL_COUNT).map(src => ({src, answer:'real'}));
+  const fake = makeFilenames('granule_fake', chDir, GRAN_FAKE_COUNT).map(src => ({src, answer:'fake'}));
+  granQueue = shuffle([...real, ...fake]).slice(0, 10);
   showScreen('screen-granule-q');
   renderGranQ();
 }
@@ -447,15 +519,11 @@ function startGranuleQuiz() {
 function renderGranQ() {
   const q = granQueue[granIdx];
   document.getElementById('gran-img').src = q.src;
-  document.getElementById('gran-progress-label').textContent =
-    `Question ${granIdx + 1} of 10`;
-  document.getElementById('gran-progress-bar').style.width =
-    `${(granIdx / 10) * 100}%`;
-
+  document.getElementById('gran-progress-label').textContent = `Question ${granIdx + 1} of 10`;
+  document.getElementById('gran-progress-bar').style.width   = `${(granIdx / 10) * 100}%`;
   const fb = document.getElementById('gran-feedback');
-  fb.style.display = 'none';
-  fb.className = 'feedback-box';
-  document.getElementById('gran-btn-row').style.display = 'grid';
+  fb.style.display = 'none'; fb.className = 'feedback-box';
+  document.getElementById('gran-btn-row').style.display  = 'grid';
   document.getElementById('gran-next-btn').style.display = 'none';
 }
 
@@ -463,36 +531,52 @@ function answerGran(guess) {
   const correct = granQueue[granIdx].answer;
   const right   = guess === correct;
   if (right) granScore++;
-
   const fb = document.getElementById('gran-feedback');
-  fb.textContent   = right
-    ? '✓ Correct! ' + (correct === 'real' ? 'That was a real AIRS observation.' : 'That was a synthetic GEOS-as-AIRS granule.')
-    : '✗ Wrong! ' + (correct === 'real' ? 'That was actually a real AIRS observation.' : 'That was actually a synthetic GEOS-as-AIRS granule.');
-  fb.className     = 'feedback-box ' + (right ? 'feedback-correct' : 'feedback-wrong');
+  fb.textContent = right
+    ? '✓ Correct! ' + (correct==='real' ? 'That was a real AIRS observation.' : 'That was a synthetic GEOS-as-AIRS granule.')
+    : '✗ Wrong! '  + (correct==='real' ? 'That was actually a real AIRS observation.' : 'That was actually a synthetic GEOS-as-AIRS granule.');
+  fb.className = 'feedback-box ' + (right ? 'fb-correct' : 'fb-wrong');
   fb.style.display = 'block';
-
-  document.getElementById('gran-btn-row').style.display = 'none';
+  document.getElementById('gran-btn-row').style.display  = 'none';
   document.getElementById('gran-next-btn').style.display = 'block';
-  document.getElementById('gran-next-btn').textContent =
-    granIdx < 9 ? 'Next →' : 'See final results →';
+  document.getElementById('gran-next-btn').textContent   = granIdx < 9 ? 'Next →' : 'See results →';
 }
 
 function nextGran() {
   granIdx++;
-  if (granIdx < 10) {
-    renderGranQ();
-  } else {
-    showFinalResults();
-  }
+  granIdx < 10 ? renderGranQ() : showGranResults();
 }
 
-function showFinalResults() {
+function showGranResults() {
+  document.getElementById('gran-score-display').textContent = `${granScore} / 10`;
+  document.getElementById('gran-score-msg').textContent     = granMessage(granScore);
+  showScreen('screen-gran-results');
+}
+
+function granMessage(s) {
+  if (s === 10) return "Perfect score! Are you secretly a satellite? 🛰️";
+  if (s >= 8)   return "Excellent work, you have a sharp eye for gravity waves! 🌊";
+  if (s >= 6)   return "Solid! The wave structure is subtle but you spotted it.";
+  if (s >= 4)   return "Not bad. It takes a trained eye to spot the difference!";
+  if (s >= 2)   return "Tough round. Our model struggles here too sometimes. 😅";
+  return "The machine definitely wins this round. Don't take it personally! 🤖";
+}
+
+// ── FINAL ─────────────────────────────────────
+async function showFinalResults() {
   const total = noiseScore + granScore;
   document.getElementById('final-score-display').textContent = `${total} / 15`;
   document.getElementById('final-score-msg').textContent     = finalMessage(total);
   document.getElementById('breakdown-noise').textContent     = `${noiseScore} / 5`;
   document.getElementById('breakdown-gran').textContent      = `${granScore} / 10`;
   showScreen('screen-final');
+
+  await saveScore(noiseScore, granScore);
+  const scores = await loadScores();
+
+  drawDist('chart-noise',  scores.noise, noiseScore, 5,  'stat-noise-n',  'stat-noise-avg');
+  drawDist('chart-gran',   scores.gran,  granScore,  10, 'stat-gran-n',   'stat-gran-avg');
+  drawDist('chart-final',  scores.total, total,      15, 'stat-final-n',  'stat-final-avg');
 }
 
 function finalMessage(s) {
@@ -504,8 +588,88 @@ function finalMessage(s) {
   return "Our model scores better than this, but don't take it personally. 🤷";
 }
 
-function resetQuiz() {
-  showScreen('screen-landing');
+function resetQuiz() { showScreen('screen-landing'); }
+
+// ══════════════════════════════════════════════
+// DISTRIBUTION CHART
+// ══════════════════════════════════════════════
+function drawDist(canvasId, allScores, myScore, maxScore, nId, avgId) {
+  const canvas = document.getElementById(canvasId);
+  const dpr    = window.devicePixelRatio || 1;
+  const W      = canvas.offsetWidth || 468;
+  const H      = 90;
+  canvas.width  = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width  = W + 'px';
+  canvas.style.height = H + 'px';
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  const pad = { l: 8, r: 8, t: 18, b: 20 };
+  const cW  = W - pad.l - pad.r;
+  const cH  = H - pad.t - pad.b;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Frequency count
+  const freq    = new Array(maxScore + 1).fill(0);
+  allScores.forEach(s => { if (s >= 0 && s <= maxScore) freq[s]++; });
+  const maxFreq = Math.max(...freq, 1);
+  const total   = allScores.length;
+
+  const barW   = cW / (maxScore + 1);
+  const barGap = Math.max(1, barW * 0.14);
+
+  for (let i = 0; i <= maxScore; i++) {
+    const x  = pad.l + i * barW + barGap / 2;
+    const bW = barW - barGap;
+    const bH = Math.max((freq[i] / maxFreq) * cH, freq[i] > 0 ? 2 : 0);
+    const y  = pad.t + cH - bH;
+    const isMe = i === myScore;
+
+    // Bar
+    ctx.fillStyle = isMe ? '#f74f8e' : '#4f8ef730';
+    if (ctx.roundRect) {
+      ctx.beginPath(); ctx.roundRect(x, y, bW, bH, 3); ctx.fill();
+    } else {
+      ctx.fillRect(x, y, bW, bH);
+    }
+
+    // Outline on my bar
+    if (isMe) {
+      ctx.strokeStyle = '#f74f8e';
+      ctx.lineWidth   = 1.5;
+      if (ctx.roundRect) {
+        ctx.beginPath(); ctx.roundRect(x, y, bW, bH, 3); ctx.stroke();
+      } else {
+        ctx.strokeRect(x, y, bW, bH);
+      }
+
+      // YOU label above bar
+      ctx.fillStyle  = '#f74f8e';
+      ctx.font       = 'bold 9px Space Mono, monospace';
+      ctx.textAlign  = 'center';
+      ctx.fillText('YOU', x + bW / 2, y - 4);
+    }
+  }
+
+  // X axis tick labels
+  ctx.fillStyle  = '#6b7094';
+  ctx.font       = '9px DM Sans, sans-serif';
+  ctx.textAlign  = 'center';
+  for (let i = 0; i <= maxScore; i++) {
+    if (maxScore <= 5 || i % Math.ceil(maxScore / 5) === 0 || i === maxScore) {
+      const x = pad.l + i * barW + barW / 2;
+      ctx.fillText(String(i), x, H - 4);
+    }
+  }
+
+  // Stats line
+  const avg = total > 0
+    ? (allScores.reduce((a,b) => a+b, 0) / total).toFixed(1)
+    : '--';
+  document.getElementById(nId).textContent  = `${total} player${total !== 1 ? 's' : ''}`;
+  document.getElementById(avgId).textContent = `avg ${avg}`;
 }
 </script>
 </body>
