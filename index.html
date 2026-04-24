@@ -429,19 +429,25 @@ async function loadScores() {
     }
     const data = await r.json();
     console.log('[JSONBin] Loaded data:', data);
-    // v3 with X-Bin-Meta:false returns the record directly
-    return data && data.noise ? data : { noise: [], gran: [], total: [] };
+    // Ensure all expected keys exist
+    return {
+      channel: data.channel || [],
+      noise:   data.noise   || [],
+      gran:    data.gran    || [],
+      total:   data.total   || []
+    };
   } catch(e) {
     console.warn('[JSONBin] Load failed:', e);
-    return { noise: [], gran: [], total: [] };
+    return { channel: [], noise: [], gran: [], total: [] };
   }
 }
 
-async function saveScore(n, g) {
+async function saveScore(ch, n, g) {
   try {
-    console.log('[JSONBin] Saving score — noise:', n, 'gran:', g);
+    console.log('[JSONBin] Saving — channel:', ch, 'noise:', n, 'gran:', g);
 
     const scores = await loadScores();
+    scores.channel.push(ch);
     scores.noise.push(n);
     scores.gran.push(g);
     scores.total.push(n + g);
@@ -623,7 +629,8 @@ async function showFinalResults() {
 
   showScreen('screen-final');
 
-  const scores = await saveScore(noiseScore, granScore);
+  // Pass channel name into saveScore
+  const scores = await saveScore(channel, noiseScore, granScore);
   const msg    = document.getElementById('saving-msg');
 
   if (scores) {
