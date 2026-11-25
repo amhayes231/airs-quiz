@@ -3,157 +3,85 @@
  "channels": {
   "4mu": {
    "name": "4.3 µm",
-   "vmax": 0.75,
+   "vmax": 1.3,
    "items": [
     {
-     "id": "84bf76e518",
+     "id": "a1dd4ba16e",
      "truth": "real",
-     "day": 23,
-     "gran": 103
-    },
-    {
-     "id": "f992f1e8fe",
-     "truth": "real",
-     "day": 50,
-     "gran": 3
-    },
-    {
-     "id": "6171ea4d06",
-     "truth": "real",
-     "day": 49,
-     "gran": 157
-    },
-    {
-     "id": "5f4692f711",
-     "truth": "real",
-     "day": 43,
-     "gran": 79
-    },
-    {
-     "id": "b999503b47",
-     "truth": "real",
-     "day": 57,
-     "gran": 165
-    },
-    {
-     "id": "455f42594a",
-     "truth": "real",
-     "day": 29,
-     "gran": 111
-    },
-    {
-     "id": "d7b30ced18",
-     "truth": "real",
-     "day": 45,
-     "gran": 63
-    },
-    {
-     "id": "e23ce833a6",
-     "truth": "synthetic",
-     "day": 53,
-     "gran": 171
-    },
-    {
-     "id": "96ed5e7d4e",
-     "truth": "synthetic",
      "day": 28,
-     "gran": 152
+     "gran": 205
     },
     {
-     "id": "d6fd395296",
+     "id": "d4ac9b91f0",
      "truth": "real",
-     "day": 33,
-     "gran": 141
+     "day": 30,
+     "gran": 168
     },
     {
-     "id": "b14cacda22",
-     "truth": "synthetic",
-     "day": 34,
-     "gran": 18
-    },
-    {
-     "id": "5d2d2b9ded",
+     "id": "e998d8ff3e",
      "truth": "real",
      "day": 29,
+     "gran": 28
+    },
+    {
+     "id": "1a4b53249c",
+     "truth": "real",
+     "day": 20,
      "gran": 144
     },
     {
-     "id": "4cf4818a9d",
+     "id": "be7354d7f8",
      "truth": "real",
-     "day": 20,
-     "gran": 145
+     "day": 44,
+     "gran": 171
     },
     {
-     "id": "74dd74f75d",
+     "id": "9374c05fd7",
+     "truth": "real",
+     "day": 26,
+     "gran": 189
+    },
+    {
+     "id": "4a6930c10d",
      "truth": "synthetic",
-     "day": 22,
-     "gran": 125
-    },
-    {
-     "id": "f2445628ef",
-     "truth": "real",
-     "day": 45,
-     "gran": 162
-    },
-    {
-     "id": "2c6fcd76e2",
-     "truth": "synthetic",
-     "day": 27,
-     "gran": 65
-    },
-    {
-     "id": "13a9afdc57",
-     "truth": "real",
-     "day": 46,
-     "gran": 101
-    },
-    {
-     "id": "65d5ede65e",
-     "truth": "real",
-     "day": 42,
-     "gran": 94
-    },
-    {
-     "id": "4d26a56983",
-     "truth": "synthetic",
-     "day": 25,
-     "gran": 179
-    },
-    {
-     "id": "57f1391fe2",
-     "truth": "synthetic",
-     "day": 32,
-     "gran": 114
-    },
-    {
-     "id": "9813a0c101",
-     "truth": "synthetic",
-     "day": 21,
-     "gran": 55
-    },
-    {
-     "id": "c65357ba34",
-     "truth": "real",
-     "day": 35,
-     "gran": 90
-    },
-    {
-     "id": "dbd36098b7",
-     "truth": "real",
-     "day": 46,
+     "day": 55,
      "gran": 202
     },
     {
-     "id": "59370dc895",
+     "id": "0ca045bc22",
      "truth": "real",
-     "day": 39,
-     "gran": 66
+     "day": 27,
+     "gran": 180
     },
     {
-     "id": "a979db35da",
+     "id": "67371665b0",
+     "truth": "synthetic",
+     "day": 24,
+     "gran": 48
+    },
+    {
+     "id": "47e99f2a1a",
      "truth": "real",
-     "day": 33,
-     "gran": 210
+     "day": 28,
+     "gran": 70
+    },
+    {
+     "id": "4a379f55a8",
+     "truth": "real",
+     "day": 43,
+     "gran": 15
+    },
+    {
+     "id": "027bbbeabf",
+     "truth": "synthetic",
+     "day": 53,
+     "gran": 85
+    },
+    {
+     "id": "249a25ce94",
+     "truth": "real",
+     "day": 38,
+     "gran": 43
     },
     {
      "id": "2075636334",
@@ -162,616 +90,442 @@
      "gran": 219
     },
     {
-     "id": "0dbb43475e",
-     "truth": "synthetic",
-     "day": 42,
-     "gran": 144
-    },
-    {
-     "id": "45d137fd68",
-     "truth": "synthetic",
-     "day": 46,
-     "gran": 87
-    },
-    {
-     "id": "ccf191e4a1",
+     "id": "b7dc6f64a6",
      "truth": "real",
-     "day": 45,
-     "gran": 79
+     "day": 41,
+     "gran": 34
     },
     {
-     "id": "7e93ac549a",
+     "id": "f937b43d38",
      "truth": "real",
-     "day": 48,
-     "gran": 169
-    },
-    {
-     "id": "7c78e078ab",
-     "truth": "synthetic",
-     "day": 29,
-     "gran": 126
-    },
-    {
-     "id": "5e51343915",
-     "truth": "synthetic",
-     "day": 49,
-     "gran": 109
-    },
-    {
-     "id": "4686a3d527",
-     "truth": "synthetic",
-     "day": 56,
-     "gran": 222
-    },
-    {
-     "id": "4324f96ced",
-     "truth": "real",
-     "day": 54,
+     "day": 47,
      "gran": 44
     },
     {
-     "id": "3342709aeb",
-     "truth": "real",
-     "day": 37,
-     "gran": 190
-    },
-    {
-     "id": "ead5746366",
+     "id": "67a0858c1f",
      "truth": "synthetic",
-     "day": 55,
-     "gran": 104
+     "day": 51,
+     "gran": 206
     },
     {
-     "id": "a32cba54b2",
-     "truth": "synthetic",
-     "day": 52,
-     "gran": 229
-    },
-    {
-     "id": "dad4bd66b8",
-     "truth": "real",
-     "day": 21,
-     "gran": 166
-    },
-    {
-     "id": "086fd87971",
-     "truth": "real",
-     "day": 21,
-     "gran": 141
-    },
-    {
-     "id": "5eb2e6fb7b",
-     "truth": "real",
-     "day": 47,
-     "gran": 143
-    },
-    {
-     "id": "e134eb1149",
-     "truth": "synthetic",
-     "day": 33,
-     "gran": 110
-    },
-    {
-     "id": "49256113f2",
-     "truth": "synthetic",
-     "day": 53,
-     "gran": 118
-    },
-    {
-     "id": "21958d3e7e",
-     "truth": "synthetic",
-     "day": 36,
-     "gran": 94
-    },
-    {
-     "id": "0f50d32943",
-     "truth": "real",
-     "day": 21,
-     "gran": 9
-    },
-    {
-     "id": "a9c283b503",
-     "truth": "real",
-     "day": 28,
-     "gran": 142
-    },
-    {
-     "id": "8971369735",
-     "truth": "real",
-     "day": 39,
-     "gran": 222
-    },
-    {
-     "id": "49a86e6352",
-     "truth": "synthetic",
-     "day": 35,
-     "gran": 86
-    },
-    {
-     "id": "9f532e5fe7",
-     "truth": "synthetic",
-     "day": 33,
-     "gran": 40
-    },
-    {
-     "id": "36f2c6ca2a",
-     "truth": "real",
-     "day": 55,
-     "gran": 53
-    },
-    {
-     "id": "28bd9e98ad",
-     "truth": "real",
-     "day": 42,
-     "gran": 237
-    },
-    {
-     "id": "0b473f3541",
-     "truth": "synthetic",
-     "day": 29,
-     "gran": 159
-    },
-    {
-     "id": "30bb30cfdf",
-     "truth": "real",
-     "day": 33,
-     "gran": 145
-    },
-    {
-     "id": "2b7650eb0d",
-     "truth": "synthetic",
-     "day": 59,
-     "gran": 95
-    },
-    {
-     "id": "81cbf9c7a0",
-     "truth": "real",
-     "day": 45,
-     "gran": 45
-    },
-    {
-     "id": "9bbc19f3b0",
-     "truth": "synthetic",
-     "day": 38,
-     "gran": 178
-    },
-    {
-     "id": "ddf1aa210a",
-     "truth": "real",
-     "day": 30,
-     "gran": 41
-    },
-    {
-     "id": "6d0fee1363",
-     "truth": "synthetic",
-     "day": 41,
-     "gran": 213
-    },
-    {
-     "id": "3338f3dd70",
-     "truth": "synthetic",
-     "day": 23,
-     "gran": 118
-    },
-    {
-     "id": "90c331a3b9",
-     "truth": "real",
-     "day": 45,
-     "gran": 160
-    },
-    {
-     "id": "66f1102264",
-     "truth": "synthetic",
-     "day": 23,
-     "gran": 135
-    },
-    {
-     "id": "2489f76434",
-     "truth": "synthetic",
-     "day": 20,
-     "gran": 128
-    },
-    {
-     "id": "00c20d146d",
-     "truth": "real",
-     "day": 40,
-     "gran": 57
-    },
-    {
-     "id": "a44523f55f",
-     "truth": "synthetic",
-     "day": 37,
-     "gran": 68
-    },
-    {
-     "id": "2ee5bcb522",
-     "truth": "synthetic",
-     "day": 48,
-     "gran": 33
-    },
-    {
-     "id": "a330ef2231",
-     "truth": "synthetic",
-     "day": 46,
-     "gran": 120
-    },
-    {
-     "id": "f3ae25d426",
+     "id": "f660695a01",
      "truth": "synthetic",
      "day": 34,
-     "gran": 133
+     "gran": 199
     },
     {
-     "id": "1136361dca",
+     "id": "526b252293",
      "truth": "synthetic",
-     "day": 56,
-     "gran": 143
+     "day": 29,
+     "gran": 93
     },
     {
-     "id": "8f3745dbda",
-     "truth": "real",
-     "day": 20,
-     "gran": 226
-    },
-    {
-     "id": "3df983ee8c",
-     "truth": "synthetic",
-     "day": 21,
-     "gran": 97
-    },
-    {
-     "id": "c0abd85d33",
-     "truth": "synthetic",
-     "day": 27,
-     "gran": 211
-    },
-    {
-     "id": "fff8cb5373",
-     "truth": "real",
-     "day": 38,
-     "gran": 13
-    },
-    {
-     "id": "76718de94f",
-     "truth": "synthetic",
-     "day": 21,
-     "gran": 98
-    },
-    {
-     "id": "5bc4136e3d",
-     "truth": "synthetic",
-     "day": 20,
-     "gran": 210
-    },
-    {
-     "id": "67f842c5f6",
-     "truth": "synthetic",
-     "day": 55,
-     "gran": 66
-    },
-    {
-     "id": "4d38fdf598",
-     "truth": "real",
-     "day": 50,
-     "gran": 64
-    },
-    {
-     "id": "2e7e7b2e15",
-     "truth": "synthetic",
-     "day": 59,
-     "gran": 180
-    },
-    {
-     "id": "23abff42f8",
-     "truth": "real",
-     "day": 28,
-     "gran": 121
-    },
-    {
-     "id": "9506d72828",
-     "truth": "real",
-     "day": 32,
-     "gran": 33
-    },
-    {
-     "id": "515c15f4e1",
+     "id": "a07d12d26a",
      "truth": "real",
      "day": 27,
-     "gran": 162
+     "gran": 230
     },
     {
-     "id": "0773042b37",
-     "truth": "synthetic",
-     "day": 43,
-     "gran": 12
-    }
-   ]
-  },
-  "15h": {
-   "name": "15 µm High",
-   "vmax": 1.2,
-   "items": [
-    {
-     "id": "47d6d6f14d",
+     "id": "35b2fbd7bd",
      "truth": "real",
-     "day": 38,
-     "gran": 148
+     "day": 21,
+     "gran": 38
     },
     {
-     "id": "cb3e11944e",
+     "id": "4d6e38742a",
      "truth": "real",
-     "day": 53,
-     "gran": 236
+     "day": 30,
+     "gran": 185
     },
     {
-     "id": "3fd8db0a4a",
-     "truth": "real",
-     "day": 59,
-     "gran": 95
-    },
-    {
-     "id": "de6e53373f",
-     "truth": "real",
-     "day": 37,
-     "gran": 72
-    },
-    {
-     "id": "3c4b98cb24",
-     "truth": "real",
-     "day": 24,
-     "gran": 146
-    },
-    {
-     "id": "7505645cdd",
-     "truth": "real",
-     "day": 51,
-     "gran": 169
-    },
-    {
-     "id": "30c5a73892",
-     "truth": "synthetic",
-     "day": 35,
-     "gran": 90
-    },
-    {
-     "id": "176eba80d9",
-     "truth": "synthetic",
-     "day": 22,
-     "gran": 171
-    },
-    {
-     "id": "0494f569bc",
-     "truth": "synthetic",
-     "day": 45,
-     "gran": 162
-    },
-    {
-     "id": "1ad810dda6",
-     "truth": "real",
-     "day": 22,
-     "gran": 127
-    },
-    {
-     "id": "3dcc084a57",
+     "id": "62f3dc19a1",
      "truth": "synthetic",
      "day": 23,
-     "gran": 83
+     "gran": 205
     },
     {
-     "id": "9e211d0c02",
-     "truth": "real",
-     "day": 29,
-     "gran": 23
+     "id": "935cdc78f1",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 39
     },
     {
-     "id": "dc99d0856e",
+     "id": "bfdc8ddc35",
      "truth": "real",
      "day": 42,
-     "gran": 57
+     "gran": 239
     },
     {
-     "id": "4b791cf498",
+     "id": "7edb4aa132",
      "truth": "synthetic",
-     "day": 22,
-     "gran": 12
+     "day": 52,
+     "gran": 197
     },
     {
-     "id": "c55f342a5c",
-     "truth": "real",
-     "day": 37,
-     "gran": 1
-    },
-    {
-     "id": "536cf5f232",
+     "id": "01ff01220d",
      "truth": "synthetic",
-     "day": 24,
-     "gran": 21
+     "day": 26,
+     "gran": 206
     },
     {
-     "id": "59c96587e0",
-     "truth": "real",
-     "day": 53,
-     "gran": 118
+     "id": "a84b5d13d7",
+     "truth": "synthetic",
+     "day": 36,
+     "gran": 196
     },
     {
-     "id": "10a91d83f7",
+     "id": "a6fa3aa1c8",
      "truth": "real",
      "day": 23,
-     "gran": 165
+     "gran": 201
     },
     {
-     "id": "9c12b20f92",
-     "truth": "synthetic",
-     "day": 35,
-     "gran": 223
-    },
-    {
-     "id": "d68f28c38c",
-     "truth": "real",
-     "day": 45,
-     "gran": 139
-    },
-    {
-     "id": "1f3c92dd65",
-     "truth": "synthetic",
-     "day": 22,
-     "gran": 108
-    },
-    {
-     "id": "f224292401",
-     "truth": "synthetic",
-     "day": 21,
-     "gran": 55
-    },
-    {
-     "id": "1fe36391c1",
-     "truth": "real",
-     "day": 55,
-     "gran": 202
-    },
-    {
-     "id": "c5ad63874d",
-     "truth": "real",
-     "day": 47,
-     "gran": 210
-    },
-    {
-     "id": "f1016cfdb4",
-     "truth": "synthetic",
-     "day": 21,
-     "gran": 134
-    },
-    {
-     "id": "7d04f35e10",
-     "truth": "real",
-     "day": 55,
-     "gran": 164
-    },
-    {
-     "id": "710d21e27e",
+     "id": "9cf85ad622",
      "truth": "synthetic",
      "day": 57,
      "gran": 216
     },
     {
-     "id": "533c99dfc7",
+     "id": "64dc799d3f",
+     "truth": "real",
+     "day": 47,
+     "gran": 226
+    },
+    {
+     "id": "ff2c28e67e",
+     "truth": "real",
+     "day": 26,
+     "gran": 120
+    },
+    {
+     "id": "34b176aade",
+     "truth": "real",
+     "day": 26,
+     "gran": 9
+    },
+    {
+     "id": "23f84a41b2",
      "truth": "synthetic",
      "day": 24,
-     "gran": 228
+     "gran": 60
     },
     {
-     "id": "048915657d",
-     "truth": "synthetic",
-     "day": 37,
-     "gran": 68
-    },
-    {
-     "id": "5b2fffc99a",
-     "truth": "synthetic",
-     "day": 24,
-     "gran": 86
-    },
-    {
-     "id": "64e5fbdfd3",
-     "truth": "real",
-     "day": 58,
-     "gran": 174
-    },
-    {
-     "id": "345a123811",
-     "truth": "real",
-     "day": 53,
-     "gran": 102
-    },
-    {
-     "id": "4e90f8671b",
-     "truth": "synthetic",
-     "day": 51,
-     "gran": 218
-    },
-    {
-     "id": "19ff7758e4",
+     "id": "c2da43cebe",
      "truth": "synthetic",
      "day": 22,
      "gran": 170
     },
     {
-     "id": "1a4af6188a",
-     "truth": "synthetic",
-     "day": 52,
-     "gran": 229
-    },
-    {
-     "id": "5232f8ba5b",
-     "truth": "real",
-     "day": 44,
-     "gran": 39
-    },
-    {
-     "id": "1a09be36e0",
-     "truth": "real",
-     "day": 24,
-     "gran": 8
-    },
-    {
-     "id": "0ee22f2a07",
-     "truth": "real",
-     "day": 41,
-     "gran": 98
-    },
-    {
-     "id": "eb99ef28fd",
-     "truth": "real",
-     "day": 27,
-     "gran": 231
-    },
-    {
-     "id": "de937320f8",
-     "truth": "real",
-     "day": 28,
-     "gran": 154
-    },
-    {
-     "id": "3ada9c380e",
-     "truth": "synthetic",
-     "day": 59,
-     "gran": 33
-    },
-    {
-     "id": "0bf47637cd",
-     "truth": "real",
-     "day": 32,
-     "gran": 114
-    },
-    {
-     "id": "306b3d72f9",
-     "truth": "real",
-     "day": 20,
-     "gran": 14
-    },
-    {
-     "id": "8c0bfca82e",
-     "truth": "synthetic",
-     "day": 23,
-     "gran": 135
-    },
-    {
-     "id": "856f79d279",
-     "truth": "real",
-     "day": 24,
-     "gran": 196
-    },
-    {
-     "id": "9cf9db8b11",
-     "truth": "real",
-     "day": 41,
-     "gran": 183
-    },
-    {
-     "id": "dde29d11bf",
+     "id": "4afec6c538",
      "truth": "synthetic",
      "day": 25,
      "gran": 94
+    },
+    {
+     "id": "40f98a6d22",
+     "truth": "real",
+     "day": 28,
+     "gran": 220
+    },
+    {
+     "id": "62d5c82796",
+     "truth": "real",
+     "day": 31,
+     "gran": 110
+    },
+    {
+     "id": "d1708f3675",
+     "truth": "real",
+     "day": 49,
+     "gran": 106
+    },
+    {
+     "id": "d1f1526597",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 105
+    },
+    {
+     "id": "2bca135a5b",
+     "truth": "synthetic",
+     "day": 25,
+     "gran": 93
+    },
+    {
+     "id": "1ba5b6720a",
+     "truth": "real",
+     "day": 20,
+     "gran": 48
+    },
+    {
+     "id": "ae7c205b19",
+     "truth": "real",
+     "day": 30,
+     "gran": 67
+    },
+    {
+     "id": "4765673f96",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 46
+    },
+    {
+     "id": "7f2c469ca8",
+     "truth": "real",
+     "day": 47,
+     "gran": 108
+    },
+    {
+     "id": "044be72d57",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 124
+    },
+    {
+     "id": "30db8fe351",
+     "truth": "real",
+     "day": 29,
+     "gran": 211
+    },
+    {
+     "id": "0c76263c8a",
+     "truth": "synthetic",
+     "day": 29,
+     "gran": 228
+    },
+    {
+     "id": "500fab2f9e",
+     "truth": "real",
+     "day": 20,
+     "gran": 65
+    },
+    {
+     "id": "bc4f46b5ba",
+     "truth": "synthetic",
+     "day": 51,
+     "gran": 223
+    },
+    {
+     "id": "4d9a5306c7",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 50
+    },
+    {
+     "id": "4d1db61e0c",
+     "truth": "real",
+     "day": 21,
+     "gran": 118
+    },
+    {
+     "id": "31e88fd419",
+     "truth": "synthetic",
+     "day": 33,
+     "gran": 224
+    },
+    {
+     "id": "7b023df59a",
+     "truth": "synthetic",
+     "day": 37,
+     "gran": 187
+    },
+    {
+     "id": "37f97c9981",
+     "truth": "real",
+     "day": 28,
+     "gran": 69
+    },
+    {
+     "id": "1fce46f5c8",
+     "truth": "synthetic",
+     "day": 26,
+     "gran": 71
+    },
+    {
+     "id": "21fb50fdb7",
+     "truth": "synthetic",
+     "day": 26,
+     "gran": 72
+    },
+    {
+     "id": "10d518c57f",
+     "truth": "synthetic",
+     "day": 55,
+     "gran": 219
+    },
+    {
+     "id": "43e5d58770",
+     "truth": "synthetic",
+     "day": 52,
+     "gran": 78
+    },
+    {
+     "id": "3d5e8b61d3",
+     "truth": "real",
+     "day": 40,
+     "gran": 123
+    },
+    {
+     "id": "147740841f",
+     "truth": "synthetic",
+     "day": 23,
+     "gran": 165
+    },
+    {
+     "id": "7be3371543",
+     "truth": "real",
+     "day": 28,
+     "gran": 86
+    },
+    {
+     "id": "5b17e8c97f",
+     "truth": "synthetic",
+     "day": 35,
+     "gran": 206
+    },
+    {
+     "id": "4784e35c2b",
+     "truth": "synthetic",
+     "day": 24,
+     "gran": 103
+    },
+    {
+     "id": "2061c9126f",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 207
+    },
+    {
+     "id": "7def76bd85",
+     "truth": "synthetic",
+     "day": 41,
+     "gran": 130
+    },
+    {
+     "id": "a6402399bf",
+     "truth": "real",
+     "day": 21,
+     "gran": 21
+    },
+    {
+     "id": "7ce7cdc87b",
+     "truth": "real",
+     "day": 30,
+     "gran": 5
+    },
+    {
+     "id": "281d5f4ade",
+     "truth": "real",
+     "day": 27,
+     "gran": 78
+    },
+    {
+     "id": "84d83b31a7",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 149
+    }
+   ]
+  },
+  "15h": {
+   "name": "15 µm High",
+   "vmax": 1.7,
+   "items": [
+    {
+     "id": "bdf96b9ecf",
+     "truth": "real",
+     "day": 28,
+     "gran": 171
+    },
+    {
+     "id": "84d6497065",
+     "truth": "real",
+     "day": 26,
+     "gran": 71
+    },
+    {
+     "id": "db1cd47feb",
+     "truth": "real",
+     "day": 20,
+     "gran": 47
+    },
+    {
+     "id": "b3af58361f",
+     "truth": "real",
+     "day": 42,
+     "gran": 55
+    },
+    {
+     "id": "2550432758",
+     "truth": "real",
+     "day": 31,
+     "gran": 107
+    },
+    {
+     "id": "95091c85c6",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 167
+    },
+    {
+     "id": "19879baa71",
+     "truth": "real",
+     "day": 22,
+     "gran": 194
+    },
+    {
+     "id": "8f4797a6e8",
+     "truth": "synthetic",
+     "day": 55,
+     "gran": 202
+    },
+    {
+     "id": "7b329c4e11",
+     "truth": "real",
+     "day": 30,
+     "gran": 51
+    },
+    {
+     "id": "bbd9aba62b",
+     "truth": "synthetic",
+     "day": 23,
+     "gran": 36
+    },
+    {
+     "id": "4bf9c095b9",
+     "truth": "real",
+     "day": 27,
+     "gran": 46
+    },
+    {
+     "id": "67878b8d60",
+     "truth": "real",
+     "day": 24,
+     "gran": 208
+    },
+    {
+     "id": "6d8393e75e",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 126
+    },
+    {
+     "id": "43bf093418",
+     "truth": "synthetic",
+     "day": 51,
+     "gran": 222
+    },
+    {
+     "id": "7ca987e442",
+     "truth": "real",
+     "day": 57,
+     "gran": 133
+    },
+    {
+     "id": "2b1c2d58ff",
+     "truth": "real",
+     "day": 45,
+     "gran": 126
     },
     {
      "id": "477c54552b",
@@ -780,148 +534,46 @@
      "gran": 31
     },
     {
-     "id": "d14bb234b5",
+     "id": "9f1f022ba5",
      "truth": "synthetic",
      "day": 24,
-     "gran": 169
+     "gran": 27
     },
     {
-     "id": "e3a1078142",
-     "truth": "real",
-     "day": 21,
-     "gran": 135
+     "id": "903b875498",
+     "truth": "synthetic",
+     "day": 23,
+     "gran": 165
     },
     {
-     "id": "2faa7b80fa",
+     "id": "b70d6a301c",
+     "truth": "synthetic",
+     "day": 53,
+     "gran": 68
+    },
+    {
+     "id": "aded988365",
      "truth": "synthetic",
      "day": 38,
-     "gran": 112
+     "gran": 178
     },
     {
-     "id": "ac6eac71ce",
-     "truth": "synthetic",
+     "id": "08cb87f3aa",
+     "truth": "real",
      "day": 49,
-     "gran": 161
+     "gran": 122
     },
     {
-     "id": "b4febfa90a",
+     "id": "62ec212129",
      "truth": "real",
-     "day": 27,
-     "gran": 147
+     "day": 45,
+     "gran": 14
     },
     {
-     "id": "d7fe515324",
+     "id": "3c678e9153",
      "truth": "synthetic",
-     "day": 21,
-     "gran": 201
-    },
-    {
-     "id": "e32ad93876",
-     "truth": "synthetic",
-     "day": 20,
-     "gran": 210
-    },
-    {
-     "id": "47933b9c82",
-     "truth": "real",
-     "day": 39,
-     "gran": 66
-    },
-    {
-     "id": "98566e6a77",
-     "truth": "synthetic",
-     "day": 26,
-     "gran": 104
-    },
-    {
-     "id": "48fcf2b3db",
-     "truth": "synthetic",
-     "day": 20,
-     "gran": 61
-    },
-    {
-     "id": "18d6a37cc4",
-     "truth": "synthetic",
-     "day": 54,
-     "gran": 194
-    },
-    {
-     "id": "5e165ebe06",
-     "truth": "real",
-     "day": 32,
-     "gran": 82
-    },
-    {
-     "id": "d3c4fdd227",
-     "truth": "real",
-     "day": 55,
-     "gran": 119
-    },
-    {
-     "id": "dbbed37939",
-     "truth": "real",
-     "day": 51,
-     "gran": 20
-    },
-    {
-     "id": "91cae3a632",
-     "truth": "real",
-     "day": 29,
-     "gran": 26
-    },
-    {
-     "id": "afd352e2c1",
-     "truth": "synthetic",
-     "day": 37,
-     "gran": 84
-    },
-    {
-     "id": "00b6ba6347",
-     "truth": "synthetic",
-     "day": 34,
-     "gran": 1
-    },
-    {
-     "id": "7a119c3c6e",
-     "truth": "real",
-     "day": 26,
-     "gran": 91
-    },
-    {
-     "id": "a374d30ff9",
-     "truth": "synthetic",
-     "day": 34,
-     "gran": 66
-    },
-    {
-     "id": "80b53efe29",
-     "truth": "synthetic",
-     "day": 25,
-     "gran": 219
-    },
-    {
-     "id": "aac95ab695",
-     "truth": "synthetic",
-     "day": 35,
-     "gran": 86
-    },
-    {
-     "id": "3bbeeef92b",
-     "truth": "real",
-     "day": 30,
-     "gran": 133
-    },
-    {
-     "id": "219b6f76c6",
-     "truth": "synthetic",
-     "day": 29,
-     "gran": 112
-    },
-    {
-     "id": "fff499f591",
-     "truth": "synthetic",
-     "day": 21,
-     "gran": 180
+     "day": 31,
+     "gran": 192
     },
     {
      "id": "256eeb57b4",
@@ -930,532 +582,514 @@
      "gran": 189
     },
     {
-     "id": "02ac4dac50",
+     "id": "7f63bab9af",
      "truth": "synthetic",
-     "day": 27,
-     "gran": 211
+     "day": 20,
+     "gran": 64
     },
     {
-     "id": "3c67868ae2",
+     "id": "b4caafbf8a",
+     "truth": "real",
+     "day": 44,
+     "gran": 86
+    },
+    {
+     "id": "5750023815",
+     "truth": "real",
+     "day": 24,
+     "gran": 192
+    },
+    {
+     "id": "0b6bbf78cc",
      "truth": "real",
      "day": 56,
-     "gran": 142
+     "gran": 8
     },
     {
-     "id": "82c3f6e0f0",
+     "id": "01a3def5ae",
      "truth": "real",
-     "day": 33,
-     "gran": 238
+     "day": 23,
+     "gran": 83
     },
     {
-     "id": "e654ff8298",
+     "id": "10dce46e12",
+     "truth": "real",
+     "day": 20,
+     "gran": 160
+    },
+    {
+     "id": "2c245ced1a",
+     "truth": "real",
+     "day": 27,
+     "gran": 95
+    },
+    {
+     "id": "7b2264aee2",
      "truth": "synthetic",
-     "day": 34,
-     "gran": 198
+     "day": 58,
+     "gran": 71
     },
     {
-     "id": "0678fef075",
+     "id": "35867f18f7",
+     "truth": "real",
+     "day": 29,
+     "gran": 194
+    },
+    {
+     "id": "73f64f782d",
      "truth": "synthetic",
-     "day": 54,
-     "gran": 191
+     "day": 22,
+     "gran": 105
     },
     {
-     "id": "216efe4884",
+     "id": "c2490a4043",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 207
+    },
+    {
+     "id": "d8e31746af",
+     "truth": "synthetic",
+     "day": 25,
+     "gran": 163
+    },
+    {
+     "id": "dbf4ebfc29",
+     "truth": "real",
+     "day": 46,
+     "gran": 21
+    },
+    {
+     "id": "2a587a494a",
+     "truth": "synthetic",
+     "day": 32,
+     "gran": 217
+    },
+    {
+     "id": "992113d4e9",
+     "truth": "synthetic",
+     "day": 59,
+     "gran": 214
+    },
+    {
+     "id": "cfdf6dd516",
+     "truth": "real",
+     "day": 28,
+     "gran": 69
+    },
+    {
+     "id": "9ec09eb635",
+     "truth": "synthetic",
+     "day": 24,
+     "gran": 212
+    },
+    {
+     "id": "048915657d",
+     "truth": "synthetic",
+     "day": 37,
+     "gran": 68
+    },
+    {
+     "id": "1b155fa2f4",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 102
+    },
+    {
+     "id": "73fe18ff01",
+     "truth": "real",
+     "day": 20,
+     "gran": 144
+    },
+    {
+     "id": "11cd2da5e1",
+     "truth": "real",
+     "day": 43,
+     "gran": 49
+    },
+    {
+     "id": "1f9762ebe7",
+     "truth": "real",
+     "day": 42,
+     "gran": 74
+    },
+    {
+     "id": "7ff32d0ec7",
+     "truth": "synthetic",
+     "day": 57,
+     "gran": 64
+    },
+    {
+     "id": "7febec32ce",
+     "truth": "synthetic",
+     "day": 26,
+     "gran": 206
+    },
+    {
+     "id": "3d43a3fd82",
      "truth": "real",
      "day": 22,
-     "gran": 66
+     "gran": 214
     },
     {
-     "id": "4476c34d27",
+     "id": "0a23c6055d",
+     "truth": "synthetic",
+     "day": 37,
+     "gran": 52
+    },
+    {
+     "id": "ee5937e1e1",
+     "truth": "synthetic",
+     "day": 23,
+     "gran": 149
+    },
+    {
+     "id": "7a873f2d96",
+     "truth": "synthetic",
+     "day": 34,
+     "gran": 199
+    },
+    {
+     "id": "1301842b5d",
      "truth": "real",
-     "day": 31,
-     "gran": 160
+     "day": 32,
+     "gran": 150
+    },
+    {
+     "id": "315e3e02e3",
+     "truth": "synthetic",
+     "day": 37,
+     "gran": 171
+    },
+    {
+     "id": "11b88e77f0",
+     "truth": "synthetic",
+     "day": 29,
+     "gran": 93
+    },
+    {
+     "id": "2406e5c2f7",
+     "truth": "synthetic",
+     "day": 24,
+     "gran": 140
+    },
+    {
+     "id": "e6a07301c9",
+     "truth": "synthetic",
+     "day": 25,
+     "gran": 50
+    },
+    {
+     "id": "7efddf5200",
+     "truth": "real",
+     "day": 28,
+     "gran": 86
+    },
+    {
+     "id": "a10474a524",
+     "truth": "real",
+     "day": 33,
+     "gran": 221
+    },
+    {
+     "id": "7c481bcb61",
+     "truth": "synthetic",
+     "day": 37,
+     "gran": 187
+    },
+    {
+     "id": "79933d10fc",
+     "truth": "synthetic",
+     "day": 35,
+     "gran": 57
+    },
+    {
+     "id": "77da686a2d",
+     "truth": "real",
+     "day": 26,
+     "gran": 120
+    },
+    {
+     "id": "795290badc",
+     "truth": "real",
+     "day": 25,
+     "gran": 113
     }
    ]
   },
   "15l": {
    "name": "15 µm Low",
-   "vmax": 0.45,
+   "vmax": 0.6,
    "items": [
     {
-     "id": "a87df30515",
+     "id": "16bed54c82",
      "truth": "real",
-     "day": 28,
-     "gran": 152
-    },
-    {
-     "id": "86cc2bba4f",
-     "truth": "real",
-     "day": 50,
-     "gran": 196
-    },
-    {
-     "id": "c029e10839",
-     "truth": "real",
-     "day": 21,
-     "gran": 187
-    },
-    {
-     "id": "bba2119b2b",
-     "truth": "synthetic",
-     "day": 39,
-     "gran": 66
-    },
-    {
-     "id": "6476745e4a",
-     "truth": "synthetic",
-     "day": 58,
-     "gran": 220
-    },
-    {
-     "id": "8cf24806ae",
-     "truth": "synthetic",
-     "day": 40,
-     "gran": 41
-    },
-    {
-     "id": "ca9417a3c1",
-     "truth": "synthetic",
-     "day": 57,
-     "gran": 202
-    },
-    {
-     "id": "6650b7aa1a",
-     "truth": "real",
-     "day": 25,
-     "gran": 17
-    },
-    {
-     "id": "6e974dd919",
-     "truth": "real",
-     "day": 42,
-     "gran": 55
-    },
-    {
-     "id": "b8d60ad242",
-     "truth": "synthetic",
-     "day": 32,
-     "gran": 78
-    },
-    {
-     "id": "116cf993f6",
-     "truth": "real",
-     "day": 53,
-     "gran": 200
-    },
-    {
-     "id": "bfa15bdd5d",
-     "truth": "real",
-     "day": 32,
-     "gran": 82
-    },
-    {
-     "id": "f1aeb396fd",
-     "truth": "real",
-     "day": 55,
-     "gran": 184
-    },
-    {
-     "id": "68ddfcfffd",
-     "truth": "real",
-     "day": 25,
-     "gran": 164
-    },
-    {
-     "id": "d99392ea45",
-     "truth": "real",
-     "day": 26,
-     "gran": 210
-    },
-    {
-     "id": "c7480d451f",
-     "truth": "real",
-     "day": 48,
-     "gran": 217
-    },
-    {
-     "id": "ae1e8a2c8b",
-     "truth": "synthetic",
-     "day": 59,
-     "gran": 160
-    },
-    {
-     "id": "044ee5c214",
-     "truth": "real",
-     "day": 35,
-     "gran": 221
-    },
-    {
-     "id": "f724372873",
-     "truth": "real",
-     "day": 42,
-     "gran": 57
-    },
-    {
-     "id": "502b6bce77",
-     "truth": "real",
-     "day": 37,
-     "gran": 71
-    },
-    {
-     "id": "c092212c63",
-     "truth": "synthetic",
-     "day": 58,
-     "gran": 216
-    },
-    {
-     "id": "1c73026124",
-     "truth": "real",
-     "day": 35,
-     "gran": 88
-    },
-    {
-     "id": "634a95b55b",
-     "truth": "synthetic",
-     "day": 35,
-     "gran": 56
-    },
-    {
-     "id": "2749a4b27d",
-     "truth": "synthetic",
      "day": 20,
-     "gran": 61
-    },
-    {
-     "id": "33196eb5f8",
-     "truth": "real",
-     "day": 30,
-     "gran": 201
-    },
-    {
-     "id": "bba8711a76",
-     "truth": "real",
-     "day": 27,
-     "gran": 50
-    },
-    {
-     "id": "bd72ce037e",
-     "truth": "real",
-     "day": 56,
-     "gran": 176
-    },
-    {
-     "id": "de3057de95",
-     "truth": "synthetic",
-     "day": 59,
-     "gran": 226
-    },
-    {
-     "id": "e2436c39e5",
-     "truth": "synthetic",
-     "day": 36,
-     "gran": 208
-    },
-    {
-     "id": "8d90d0e339",
-     "truth": "synthetic",
-     "day": 44,
-     "gran": 125
-    },
-    {
-     "id": "c52442b702",
-     "truth": "synthetic",
-     "day": 34,
-     "gran": 197
-    },
-    {
-     "id": "58ea46c4b6",
-     "truth": "synthetic",
-     "day": 31,
-     "gran": 42
-    },
-    {
-     "id": "71df01a893",
-     "truth": "real",
-     "day": 36,
-     "gran": 233
-    },
-    {
-     "id": "b78c7bb034",
-     "truth": "synthetic",
-     "day": 52,
-     "gran": 163
-    },
-    {
-     "id": "aff1fbe534",
-     "truth": "synthetic",
-     "day": 29,
      "gran": 144
     },
     {
-     "id": "4855b7489f",
+     "id": "1206fbf099",
      "truth": "synthetic",
-     "day": 21,
-     "gran": 236
-    },
-    {
-     "id": "408ad03d1c",
-     "truth": "real",
-     "day": 56,
-     "gran": 224
-    },
-    {
-     "id": "91ff320295",
-     "truth": "synthetic",
-     "day": 33,
-     "gran": 145
-    },
-    {
-     "id": "014fe015df",
-     "truth": "synthetic",
-     "day": 51,
-     "gran": 136
-    },
-    {
-     "id": "21dea47eda",
-     "truth": "synthetic",
-     "day": 48,
-     "gran": 49
-    },
-    {
-     "id": "f33328e6f0",
-     "truth": "real",
-     "day": 34,
-     "gran": 101
-    },
-    {
-     "id": "400c68c036",
-     "truth": "real",
-     "day": 45,
-     "gran": 79
-    },
-    {
-     "id": "48212090a5",
-     "truth": "real",
-     "day": 43,
-     "gran": 49
-    },
-    {
-     "id": "673f3e0602",
-     "truth": "real",
-     "day": 27,
-     "gran": 161
-    },
-    {
-     "id": "e5511d30a0",
-     "truth": "real",
-     "day": 26,
-     "gran": 234
-    },
-    {
-     "id": "562bea1e85",
-     "truth": "real",
-     "day": 38,
-     "gran": 130
-    },
-    {
-     "id": "d918ce657a",
-     "truth": "real",
-     "day": 59,
-     "gran": 180
-    },
-    {
-     "id": "c985533558",
-     "truth": "real",
-     "day": 47,
-     "gran": 78
-    },
-    {
-     "id": "fdec945995",
-     "truth": "synthetic",
-     "day": 57,
-     "gran": 215
-    },
-    {
-     "id": "2f706c09fe",
-     "truth": "synthetic",
-     "day": 38,
-     "gran": 160
-    },
-    {
-     "id": "0824edf56f",
-     "truth": "synthetic",
-     "day": 37,
+     "day": 24,
      "gran": 124
     },
     {
-     "id": "d4325b11dd",
-     "truth": "synthetic",
-     "day": 40,
-     "gran": 57
+     "id": "5e057e30db",
+     "truth": "real",
+     "day": 29,
+     "gran": 14
     },
     {
-     "id": "44e89090d7",
-     "truth": "synthetic",
-     "day": 39,
+     "id": "cbb8e036c6",
+     "truth": "real",
+     "day": 32,
+     "gran": 17
+    },
+    {
+     "id": "e21d5e2104",
+     "truth": "real",
+     "day": 53,
+     "gran": 118
+    },
+    {
+     "id": "5ab315177c",
+     "truth": "real",
+     "day": 21,
+     "gran": 102
+    },
+    {
+     "id": "5b7465833d",
+     "truth": "real",
+     "day": 37,
      "gran": 21
     },
     {
-     "id": "aed62dd108",
+     "id": "ce549cbd8f",
+     "truth": "synthetic",
+     "day": 55,
+     "gran": 20
+    },
+    {
+     "id": "da8a049407",
      "truth": "real",
-     "day": 21,
-     "gran": 166
-    },
-    {
-     "id": "5339511dfc",
-     "truth": "synthetic",
-     "day": 26,
-     "gran": 71
-    },
-    {
-     "id": "db3eebfdde",
-     "truth": "real",
-     "day": 43,
-     "gran": 228
-    },
-    {
-     "id": "bfdbd92173",
-     "truth": "real",
-     "day": 58,
-     "gran": 156
-    },
-    {
-     "id": "2fcd6416d2",
-     "truth": "synthetic",
-     "day": 45,
-     "gran": 162
-    },
-    {
-     "id": "8fb7ff2fc8",
-     "truth": "synthetic",
-     "day": 20,
-     "gran": 178
-    },
-    {
-     "id": "91ee3c757f",
-     "truth": "real",
-     "day": 51,
-     "gran": 237
-    },
-    {
-     "id": "d86ccb2f74",
-     "truth": "synthetic",
-     "day": 56,
-     "gran": 174
-    },
-    {
-     "id": "214538c9e6",
-     "truth": "synthetic",
-     "day": 22,
-     "gran": 127
-    },
-    {
-     "id": "6e5a068ec5",
-     "truth": "synthetic",
-     "day": 54,
-     "gran": 108
-    },
-    {
-     "id": "5a1e1e2f31",
-     "truth": "synthetic",
-     "day": 51,
-     "gran": 89
-    },
-    {
-     "id": "45a3a0f64a",
-     "truth": "real",
-     "day": 41,
-     "gran": 183
-    },
-    {
-     "id": "87a740b253",
-     "truth": "synthetic",
-     "day": 22,
-     "gran": 225
-    },
-    {
-     "id": "56a01a08a5",
-     "truth": "synthetic",
-     "day": 43,
-     "gran": 214
-    },
-    {
-     "id": "5df2fcdd7b",
-     "truth": "synthetic",
      "day": 28,
-     "gran": 168
+     "gran": 204
     },
     {
-     "id": "ffa1d005b8",
+     "id": "49cad07261",
      "truth": "real",
-     "day": 47,
-     "gran": 28
+     "day": 29,
+     "gran": 60
     },
     {
-     "id": "5ac841206c",
-     "truth": "synthetic",
+     "id": "0942e3cb4f",
+     "truth": "real",
      "day": 22,
-     "gran": 25
+     "gran": 12
     },
     {
-     "id": "1d865242ad",
-     "truth": "real",
-     "day": 42,
-     "gran": 89
-    },
-    {
-     "id": "2eae1eef0c",
-     "truth": "real",
-     "day": 52,
-     "gran": 193
-    },
-    {
-     "id": "b99eef38a0",
-     "truth": "real",
-     "day": 50,
-     "gran": 64
-    },
-    {
-     "id": "abfc631ad7",
+     "id": "f7d6b098ba",
      "truth": "synthetic",
-     "day": 25,
+     "day": 47,
+     "gran": 125
+    },
+    {
+     "id": "3f61a3f95a",
+     "truth": "real",
+     "day": 27,
      "gran": 79
     },
     {
-     "id": "1d8c9a1502",
+     "id": "0da4276994",
      "truth": "real",
-     "day": 35,
-     "gran": 121
+     "day": 27,
+     "gran": 197
     },
     {
-     "id": "273299023f",
+     "id": "4b6520d03c",
      "truth": "synthetic",
-     "day": 51,
-     "gran": 54
+     "day": 22,
+     "gran": 126
     },
     {
-     "id": "2c200a2803",
+     "id": "0b2bdff04d",
+     "truth": "real",
+     "day": 56,
+     "gran": 208
+    },
+    {
+     "id": "a508d06a39",
      "truth": "synthetic",
-     "day": 59,
-     "gran": 229
+     "day": 46,
+     "gran": 101
     },
     {
-     "id": "f9f806d8a9",
+     "id": "f4db2222b9",
      "truth": "real",
      "day": 25,
-     "gran": 198
+     "gran": 232
     },
     {
-     "id": "9ea3eedd60",
+     "id": "7e89c2c6ca",
      "truth": "real",
-     "day": 35,
-     "gran": 86
+     "day": 22,
+     "gran": 125
     },
     {
-     "id": "b960432e6e",
+     "id": "4bd78120bc",
+     "truth": "synthetic",
+     "day": 31,
+     "gran": 61
+    },
+    {
+     "id": "8f8dfae2ec",
+     "truth": "synthetic",
+     "day": 45,
+     "gran": 13
+    },
+    {
+     "id": "8e644baab4",
+     "truth": "real",
+     "day": 26,
+     "gran": 206
+    },
+    {
+     "id": "3e4cb55fb9",
+     "truth": "real",
+     "day": 55,
+     "gran": 116
+    },
+    {
+     "id": "03d043d7de",
+     "truth": "real",
+     "day": 29,
+     "gran": 195
+    },
+    {
+     "id": "a2c1f32adb",
+     "truth": "synthetic",
+     "day": 35,
+     "gran": 24
+    },
+    {
+     "id": "6eb64d81e8",
+     "truth": "synthetic",
+     "day": 56,
+     "gran": 123
+    },
+    {
+     "id": "3f91f6af2b",
      "truth": "synthetic",
      "day": 54,
-     "gran": 49
+     "gran": 126
+    },
+    {
+     "id": "ac2f742612",
+     "truth": "synthetic",
+     "day": 23,
+     "gran": 149
+    },
+    {
+     "id": "fb554723b6",
+     "truth": "real",
+     "day": 37,
+     "gran": 118
+    },
+    {
+     "id": "51f73051fa",
+     "truth": "real",
+     "day": 20,
+     "gran": 111
+    },
+    {
+     "id": "fa6e47c091",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 158
+    },
+    {
+     "id": "b022d10b91",
+     "truth": "real",
+     "day": 27,
+     "gran": 213
+    },
+    {
+     "id": "ac50e69f82",
+     "truth": "synthetic",
+     "day": 55,
+     "gran": 36
+    },
+    {
+     "id": "fb698b0c60",
+     "truth": "synthetic",
+     "day": 52,
+     "gran": 196
+    },
+    {
+     "id": "b6fce26704",
+     "truth": "synthetic",
+     "day": 55,
+     "gran": 68
+    },
+    {
+     "id": "9bf082266e",
+     "truth": "synthetic",
+     "day": 57,
+     "gran": 18
+    },
+    {
+     "id": "27e16cc1b0",
+     "truth": "synthetic",
+     "day": 48,
+     "gran": 18
+    },
+    {
+     "id": "26c993ab3c",
+     "truth": "real",
+     "day": 28,
+     "gran": 187
+    },
+    {
+     "id": "fc71e52319",
+     "truth": "synthetic",
+     "day": 32,
+     "gran": 233
+    },
+    {
+     "id": "6296f554b0",
+     "truth": "real",
+     "day": 20,
+     "gran": 47
+    },
+    {
+     "id": "d4e85f351a",
+     "truth": "synthetic",
+     "day": 50,
+     "gran": 146
+    },
+    {
+     "id": "8b58b083df",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 93
+    },
+    {
+     "id": "cf8f8b7b21",
+     "truth": "synthetic",
+     "day": 54,
+     "gran": 125
+    },
+    {
+     "id": "78036aff1e",
+     "truth": "real",
+     "day": 29,
+     "gran": 28
+    },
+    {
+     "id": "e638f66196",
+     "truth": "real",
+     "day": 28,
+     "gran": 69
     }
    ]
   }
