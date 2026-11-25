@@ -1,0 +1,1463 @@
+{
+ "version": "agu26",
+ "channels": {
+  "4mu": {
+   "name": "4.3 µm",
+   "vmax": 0.75,
+   "items": [
+    {
+     "id": "84bf76e518",
+     "truth": "real",
+     "day": 23,
+     "gran": 103
+    },
+    {
+     "id": "f992f1e8fe",
+     "truth": "real",
+     "day": 50,
+     "gran": 3
+    },
+    {
+     "id": "6171ea4d06",
+     "truth": "real",
+     "day": 49,
+     "gran": 157
+    },
+    {
+     "id": "5f4692f711",
+     "truth": "real",
+     "day": 43,
+     "gran": 79
+    },
+    {
+     "id": "b999503b47",
+     "truth": "real",
+     "day": 57,
+     "gran": 165
+    },
+    {
+     "id": "455f42594a",
+     "truth": "real",
+     "day": 29,
+     "gran": 111
+    },
+    {
+     "id": "d7b30ced18",
+     "truth": "real",
+     "day": 45,
+     "gran": 63
+    },
+    {
+     "id": "e23ce833a6",
+     "truth": "synthetic",
+     "day": 53,
+     "gran": 171
+    },
+    {
+     "id": "96ed5e7d4e",
+     "truth": "synthetic",
+     "day": 28,
+     "gran": 152
+    },
+    {
+     "id": "d6fd395296",
+     "truth": "real",
+     "day": 33,
+     "gran": 141
+    },
+    {
+     "id": "b14cacda22",
+     "truth": "synthetic",
+     "day": 34,
+     "gran": 18
+    },
+    {
+     "id": "5d2d2b9ded",
+     "truth": "real",
+     "day": 29,
+     "gran": 144
+    },
+    {
+     "id": "4cf4818a9d",
+     "truth": "real",
+     "day": 20,
+     "gran": 145
+    },
+    {
+     "id": "74dd74f75d",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 125
+    },
+    {
+     "id": "f2445628ef",
+     "truth": "real",
+     "day": 45,
+     "gran": 162
+    },
+    {
+     "id": "2c6fcd76e2",
+     "truth": "synthetic",
+     "day": 27,
+     "gran": 65
+    },
+    {
+     "id": "13a9afdc57",
+     "truth": "real",
+     "day": 46,
+     "gran": 101
+    },
+    {
+     "id": "65d5ede65e",
+     "truth": "real",
+     "day": 42,
+     "gran": 94
+    },
+    {
+     "id": "4d26a56983",
+     "truth": "synthetic",
+     "day": 25,
+     "gran": 179
+    },
+    {
+     "id": "57f1391fe2",
+     "truth": "synthetic",
+     "day": 32,
+     "gran": 114
+    },
+    {
+     "id": "9813a0c101",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 55
+    },
+    {
+     "id": "c65357ba34",
+     "truth": "real",
+     "day": 35,
+     "gran": 90
+    },
+    {
+     "id": "dbd36098b7",
+     "truth": "real",
+     "day": 46,
+     "gran": 202
+    },
+    {
+     "id": "59370dc895",
+     "truth": "real",
+     "day": 39,
+     "gran": 66
+    },
+    {
+     "id": "a979db35da",
+     "truth": "real",
+     "day": 33,
+     "gran": 210
+    },
+    {
+     "id": "2075636334",
+     "truth": "synthetic",
+     "day": 25,
+     "gran": 219
+    },
+    {
+     "id": "0dbb43475e",
+     "truth": "synthetic",
+     "day": 42,
+     "gran": 144
+    },
+    {
+     "id": "45d137fd68",
+     "truth": "synthetic",
+     "day": 46,
+     "gran": 87
+    },
+    {
+     "id": "ccf191e4a1",
+     "truth": "real",
+     "day": 45,
+     "gran": 79
+    },
+    {
+     "id": "7e93ac549a",
+     "truth": "real",
+     "day": 48,
+     "gran": 169
+    },
+    {
+     "id": "7c78e078ab",
+     "truth": "synthetic",
+     "day": 29,
+     "gran": 126
+    },
+    {
+     "id": "5e51343915",
+     "truth": "synthetic",
+     "day": 49,
+     "gran": 109
+    },
+    {
+     "id": "4686a3d527",
+     "truth": "synthetic",
+     "day": 56,
+     "gran": 222
+    },
+    {
+     "id": "4324f96ced",
+     "truth": "real",
+     "day": 54,
+     "gran": 44
+    },
+    {
+     "id": "3342709aeb",
+     "truth": "real",
+     "day": 37,
+     "gran": 190
+    },
+    {
+     "id": "ead5746366",
+     "truth": "synthetic",
+     "day": 55,
+     "gran": 104
+    },
+    {
+     "id": "a32cba54b2",
+     "truth": "synthetic",
+     "day": 52,
+     "gran": 229
+    },
+    {
+     "id": "dad4bd66b8",
+     "truth": "real",
+     "day": 21,
+     "gran": 166
+    },
+    {
+     "id": "086fd87971",
+     "truth": "real",
+     "day": 21,
+     "gran": 141
+    },
+    {
+     "id": "5eb2e6fb7b",
+     "truth": "real",
+     "day": 47,
+     "gran": 143
+    },
+    {
+     "id": "e134eb1149",
+     "truth": "synthetic",
+     "day": 33,
+     "gran": 110
+    },
+    {
+     "id": "49256113f2",
+     "truth": "synthetic",
+     "day": 53,
+     "gran": 118
+    },
+    {
+     "id": "21958d3e7e",
+     "truth": "synthetic",
+     "day": 36,
+     "gran": 94
+    },
+    {
+     "id": "0f50d32943",
+     "truth": "real",
+     "day": 21,
+     "gran": 9
+    },
+    {
+     "id": "a9c283b503",
+     "truth": "real",
+     "day": 28,
+     "gran": 142
+    },
+    {
+     "id": "8971369735",
+     "truth": "real",
+     "day": 39,
+     "gran": 222
+    },
+    {
+     "id": "49a86e6352",
+     "truth": "synthetic",
+     "day": 35,
+     "gran": 86
+    },
+    {
+     "id": "9f532e5fe7",
+     "truth": "synthetic",
+     "day": 33,
+     "gran": 40
+    },
+    {
+     "id": "36f2c6ca2a",
+     "truth": "real",
+     "day": 55,
+     "gran": 53
+    },
+    {
+     "id": "28bd9e98ad",
+     "truth": "real",
+     "day": 42,
+     "gran": 237
+    },
+    {
+     "id": "0b473f3541",
+     "truth": "synthetic",
+     "day": 29,
+     "gran": 159
+    },
+    {
+     "id": "30bb30cfdf",
+     "truth": "real",
+     "day": 33,
+     "gran": 145
+    },
+    {
+     "id": "2b7650eb0d",
+     "truth": "synthetic",
+     "day": 59,
+     "gran": 95
+    },
+    {
+     "id": "81cbf9c7a0",
+     "truth": "real",
+     "day": 45,
+     "gran": 45
+    },
+    {
+     "id": "9bbc19f3b0",
+     "truth": "synthetic",
+     "day": 38,
+     "gran": 178
+    },
+    {
+     "id": "ddf1aa210a",
+     "truth": "real",
+     "day": 30,
+     "gran": 41
+    },
+    {
+     "id": "6d0fee1363",
+     "truth": "synthetic",
+     "day": 41,
+     "gran": 213
+    },
+    {
+     "id": "3338f3dd70",
+     "truth": "synthetic",
+     "day": 23,
+     "gran": 118
+    },
+    {
+     "id": "90c331a3b9",
+     "truth": "real",
+     "day": 45,
+     "gran": 160
+    },
+    {
+     "id": "66f1102264",
+     "truth": "synthetic",
+     "day": 23,
+     "gran": 135
+    },
+    {
+     "id": "2489f76434",
+     "truth": "synthetic",
+     "day": 20,
+     "gran": 128
+    },
+    {
+     "id": "00c20d146d",
+     "truth": "real",
+     "day": 40,
+     "gran": 57
+    },
+    {
+     "id": "a44523f55f",
+     "truth": "synthetic",
+     "day": 37,
+     "gran": 68
+    },
+    {
+     "id": "2ee5bcb522",
+     "truth": "synthetic",
+     "day": 48,
+     "gran": 33
+    },
+    {
+     "id": "a330ef2231",
+     "truth": "synthetic",
+     "day": 46,
+     "gran": 120
+    },
+    {
+     "id": "f3ae25d426",
+     "truth": "synthetic",
+     "day": 34,
+     "gran": 133
+    },
+    {
+     "id": "1136361dca",
+     "truth": "synthetic",
+     "day": 56,
+     "gran": 143
+    },
+    {
+     "id": "8f3745dbda",
+     "truth": "real",
+     "day": 20,
+     "gran": 226
+    },
+    {
+     "id": "3df983ee8c",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 97
+    },
+    {
+     "id": "c0abd85d33",
+     "truth": "synthetic",
+     "day": 27,
+     "gran": 211
+    },
+    {
+     "id": "fff8cb5373",
+     "truth": "real",
+     "day": 38,
+     "gran": 13
+    },
+    {
+     "id": "76718de94f",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 98
+    },
+    {
+     "id": "5bc4136e3d",
+     "truth": "synthetic",
+     "day": 20,
+     "gran": 210
+    },
+    {
+     "id": "67f842c5f6",
+     "truth": "synthetic",
+     "day": 55,
+     "gran": 66
+    },
+    {
+     "id": "4d38fdf598",
+     "truth": "real",
+     "day": 50,
+     "gran": 64
+    },
+    {
+     "id": "2e7e7b2e15",
+     "truth": "synthetic",
+     "day": 59,
+     "gran": 180
+    },
+    {
+     "id": "23abff42f8",
+     "truth": "real",
+     "day": 28,
+     "gran": 121
+    },
+    {
+     "id": "9506d72828",
+     "truth": "real",
+     "day": 32,
+     "gran": 33
+    },
+    {
+     "id": "515c15f4e1",
+     "truth": "real",
+     "day": 27,
+     "gran": 162
+    },
+    {
+     "id": "0773042b37",
+     "truth": "synthetic",
+     "day": 43,
+     "gran": 12
+    }
+   ]
+  },
+  "15h": {
+   "name": "15 µm High",
+   "vmax": 1.2,
+   "items": [
+    {
+     "id": "47d6d6f14d",
+     "truth": "real",
+     "day": 38,
+     "gran": 148
+    },
+    {
+     "id": "cb3e11944e",
+     "truth": "real",
+     "day": 53,
+     "gran": 236
+    },
+    {
+     "id": "3fd8db0a4a",
+     "truth": "real",
+     "day": 59,
+     "gran": 95
+    },
+    {
+     "id": "de6e53373f",
+     "truth": "real",
+     "day": 37,
+     "gran": 72
+    },
+    {
+     "id": "3c4b98cb24",
+     "truth": "real",
+     "day": 24,
+     "gran": 146
+    },
+    {
+     "id": "7505645cdd",
+     "truth": "real",
+     "day": 51,
+     "gran": 169
+    },
+    {
+     "id": "30c5a73892",
+     "truth": "synthetic",
+     "day": 35,
+     "gran": 90
+    },
+    {
+     "id": "176eba80d9",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 171
+    },
+    {
+     "id": "0494f569bc",
+     "truth": "synthetic",
+     "day": 45,
+     "gran": 162
+    },
+    {
+     "id": "1ad810dda6",
+     "truth": "real",
+     "day": 22,
+     "gran": 127
+    },
+    {
+     "id": "3dcc084a57",
+     "truth": "synthetic",
+     "day": 23,
+     "gran": 83
+    },
+    {
+     "id": "9e211d0c02",
+     "truth": "real",
+     "day": 29,
+     "gran": 23
+    },
+    {
+     "id": "dc99d0856e",
+     "truth": "real",
+     "day": 42,
+     "gran": 57
+    },
+    {
+     "id": "4b791cf498",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 12
+    },
+    {
+     "id": "c55f342a5c",
+     "truth": "real",
+     "day": 37,
+     "gran": 1
+    },
+    {
+     "id": "536cf5f232",
+     "truth": "synthetic",
+     "day": 24,
+     "gran": 21
+    },
+    {
+     "id": "59c96587e0",
+     "truth": "real",
+     "day": 53,
+     "gran": 118
+    },
+    {
+     "id": "10a91d83f7",
+     "truth": "real",
+     "day": 23,
+     "gran": 165
+    },
+    {
+     "id": "9c12b20f92",
+     "truth": "synthetic",
+     "day": 35,
+     "gran": 223
+    },
+    {
+     "id": "d68f28c38c",
+     "truth": "real",
+     "day": 45,
+     "gran": 139
+    },
+    {
+     "id": "1f3c92dd65",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 108
+    },
+    {
+     "id": "f224292401",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 55
+    },
+    {
+     "id": "1fe36391c1",
+     "truth": "real",
+     "day": 55,
+     "gran": 202
+    },
+    {
+     "id": "c5ad63874d",
+     "truth": "real",
+     "day": 47,
+     "gran": 210
+    },
+    {
+     "id": "f1016cfdb4",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 134
+    },
+    {
+     "id": "7d04f35e10",
+     "truth": "real",
+     "day": 55,
+     "gran": 164
+    },
+    {
+     "id": "710d21e27e",
+     "truth": "synthetic",
+     "day": 57,
+     "gran": 216
+    },
+    {
+     "id": "533c99dfc7",
+     "truth": "synthetic",
+     "day": 24,
+     "gran": 228
+    },
+    {
+     "id": "048915657d",
+     "truth": "synthetic",
+     "day": 37,
+     "gran": 68
+    },
+    {
+     "id": "5b2fffc99a",
+     "truth": "synthetic",
+     "day": 24,
+     "gran": 86
+    },
+    {
+     "id": "64e5fbdfd3",
+     "truth": "real",
+     "day": 58,
+     "gran": 174
+    },
+    {
+     "id": "345a123811",
+     "truth": "real",
+     "day": 53,
+     "gran": 102
+    },
+    {
+     "id": "4e90f8671b",
+     "truth": "synthetic",
+     "day": 51,
+     "gran": 218
+    },
+    {
+     "id": "19ff7758e4",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 170
+    },
+    {
+     "id": "1a4af6188a",
+     "truth": "synthetic",
+     "day": 52,
+     "gran": 229
+    },
+    {
+     "id": "5232f8ba5b",
+     "truth": "real",
+     "day": 44,
+     "gran": 39
+    },
+    {
+     "id": "1a09be36e0",
+     "truth": "real",
+     "day": 24,
+     "gran": 8
+    },
+    {
+     "id": "0ee22f2a07",
+     "truth": "real",
+     "day": 41,
+     "gran": 98
+    },
+    {
+     "id": "eb99ef28fd",
+     "truth": "real",
+     "day": 27,
+     "gran": 231
+    },
+    {
+     "id": "de937320f8",
+     "truth": "real",
+     "day": 28,
+     "gran": 154
+    },
+    {
+     "id": "3ada9c380e",
+     "truth": "synthetic",
+     "day": 59,
+     "gran": 33
+    },
+    {
+     "id": "0bf47637cd",
+     "truth": "real",
+     "day": 32,
+     "gran": 114
+    },
+    {
+     "id": "306b3d72f9",
+     "truth": "real",
+     "day": 20,
+     "gran": 14
+    },
+    {
+     "id": "8c0bfca82e",
+     "truth": "synthetic",
+     "day": 23,
+     "gran": 135
+    },
+    {
+     "id": "856f79d279",
+     "truth": "real",
+     "day": 24,
+     "gran": 196
+    },
+    {
+     "id": "9cf9db8b11",
+     "truth": "real",
+     "day": 41,
+     "gran": 183
+    },
+    {
+     "id": "dde29d11bf",
+     "truth": "synthetic",
+     "day": 25,
+     "gran": 94
+    },
+    {
+     "id": "477c54552b",
+     "truth": "synthetic",
+     "day": 20,
+     "gran": 31
+    },
+    {
+     "id": "d14bb234b5",
+     "truth": "synthetic",
+     "day": 24,
+     "gran": 169
+    },
+    {
+     "id": "e3a1078142",
+     "truth": "real",
+     "day": 21,
+     "gran": 135
+    },
+    {
+     "id": "2faa7b80fa",
+     "truth": "synthetic",
+     "day": 38,
+     "gran": 112
+    },
+    {
+     "id": "ac6eac71ce",
+     "truth": "synthetic",
+     "day": 49,
+     "gran": 161
+    },
+    {
+     "id": "b4febfa90a",
+     "truth": "real",
+     "day": 27,
+     "gran": 147
+    },
+    {
+     "id": "d7fe515324",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 201
+    },
+    {
+     "id": "e32ad93876",
+     "truth": "synthetic",
+     "day": 20,
+     "gran": 210
+    },
+    {
+     "id": "47933b9c82",
+     "truth": "real",
+     "day": 39,
+     "gran": 66
+    },
+    {
+     "id": "98566e6a77",
+     "truth": "synthetic",
+     "day": 26,
+     "gran": 104
+    },
+    {
+     "id": "48fcf2b3db",
+     "truth": "synthetic",
+     "day": 20,
+     "gran": 61
+    },
+    {
+     "id": "18d6a37cc4",
+     "truth": "synthetic",
+     "day": 54,
+     "gran": 194
+    },
+    {
+     "id": "5e165ebe06",
+     "truth": "real",
+     "day": 32,
+     "gran": 82
+    },
+    {
+     "id": "d3c4fdd227",
+     "truth": "real",
+     "day": 55,
+     "gran": 119
+    },
+    {
+     "id": "dbbed37939",
+     "truth": "real",
+     "day": 51,
+     "gran": 20
+    },
+    {
+     "id": "91cae3a632",
+     "truth": "real",
+     "day": 29,
+     "gran": 26
+    },
+    {
+     "id": "afd352e2c1",
+     "truth": "synthetic",
+     "day": 37,
+     "gran": 84
+    },
+    {
+     "id": "00b6ba6347",
+     "truth": "synthetic",
+     "day": 34,
+     "gran": 1
+    },
+    {
+     "id": "7a119c3c6e",
+     "truth": "real",
+     "day": 26,
+     "gran": 91
+    },
+    {
+     "id": "a374d30ff9",
+     "truth": "synthetic",
+     "day": 34,
+     "gran": 66
+    },
+    {
+     "id": "80b53efe29",
+     "truth": "synthetic",
+     "day": 25,
+     "gran": 219
+    },
+    {
+     "id": "aac95ab695",
+     "truth": "synthetic",
+     "day": 35,
+     "gran": 86
+    },
+    {
+     "id": "3bbeeef92b",
+     "truth": "real",
+     "day": 30,
+     "gran": 133
+    },
+    {
+     "id": "219b6f76c6",
+     "truth": "synthetic",
+     "day": 29,
+     "gran": 112
+    },
+    {
+     "id": "fff499f591",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 180
+    },
+    {
+     "id": "256eeb57b4",
+     "truth": "synthetic",
+     "day": 35,
+     "gran": 189
+    },
+    {
+     "id": "02ac4dac50",
+     "truth": "synthetic",
+     "day": 27,
+     "gran": 211
+    },
+    {
+     "id": "3c67868ae2",
+     "truth": "real",
+     "day": 56,
+     "gran": 142
+    },
+    {
+     "id": "82c3f6e0f0",
+     "truth": "real",
+     "day": 33,
+     "gran": 238
+    },
+    {
+     "id": "e654ff8298",
+     "truth": "synthetic",
+     "day": 34,
+     "gran": 198
+    },
+    {
+     "id": "0678fef075",
+     "truth": "synthetic",
+     "day": 54,
+     "gran": 191
+    },
+    {
+     "id": "216efe4884",
+     "truth": "real",
+     "day": 22,
+     "gran": 66
+    },
+    {
+     "id": "4476c34d27",
+     "truth": "real",
+     "day": 31,
+     "gran": 160
+    }
+   ]
+  },
+  "15l": {
+   "name": "15 µm Low",
+   "vmax": 0.45,
+   "items": [
+    {
+     "id": "a87df30515",
+     "truth": "real",
+     "day": 28,
+     "gran": 152
+    },
+    {
+     "id": "86cc2bba4f",
+     "truth": "real",
+     "day": 50,
+     "gran": 196
+    },
+    {
+     "id": "c029e10839",
+     "truth": "real",
+     "day": 21,
+     "gran": 187
+    },
+    {
+     "id": "bba2119b2b",
+     "truth": "synthetic",
+     "day": 39,
+     "gran": 66
+    },
+    {
+     "id": "6476745e4a",
+     "truth": "synthetic",
+     "day": 58,
+     "gran": 220
+    },
+    {
+     "id": "8cf24806ae",
+     "truth": "synthetic",
+     "day": 40,
+     "gran": 41
+    },
+    {
+     "id": "ca9417a3c1",
+     "truth": "synthetic",
+     "day": 57,
+     "gran": 202
+    },
+    {
+     "id": "6650b7aa1a",
+     "truth": "real",
+     "day": 25,
+     "gran": 17
+    },
+    {
+     "id": "6e974dd919",
+     "truth": "real",
+     "day": 42,
+     "gran": 55
+    },
+    {
+     "id": "b8d60ad242",
+     "truth": "synthetic",
+     "day": 32,
+     "gran": 78
+    },
+    {
+     "id": "116cf993f6",
+     "truth": "real",
+     "day": 53,
+     "gran": 200
+    },
+    {
+     "id": "bfa15bdd5d",
+     "truth": "real",
+     "day": 32,
+     "gran": 82
+    },
+    {
+     "id": "f1aeb396fd",
+     "truth": "real",
+     "day": 55,
+     "gran": 184
+    },
+    {
+     "id": "68ddfcfffd",
+     "truth": "real",
+     "day": 25,
+     "gran": 164
+    },
+    {
+     "id": "d99392ea45",
+     "truth": "real",
+     "day": 26,
+     "gran": 210
+    },
+    {
+     "id": "c7480d451f",
+     "truth": "real",
+     "day": 48,
+     "gran": 217
+    },
+    {
+     "id": "ae1e8a2c8b",
+     "truth": "synthetic",
+     "day": 59,
+     "gran": 160
+    },
+    {
+     "id": "044ee5c214",
+     "truth": "real",
+     "day": 35,
+     "gran": 221
+    },
+    {
+     "id": "f724372873",
+     "truth": "real",
+     "day": 42,
+     "gran": 57
+    },
+    {
+     "id": "502b6bce77",
+     "truth": "real",
+     "day": 37,
+     "gran": 71
+    },
+    {
+     "id": "c092212c63",
+     "truth": "synthetic",
+     "day": 58,
+     "gran": 216
+    },
+    {
+     "id": "1c73026124",
+     "truth": "real",
+     "day": 35,
+     "gran": 88
+    },
+    {
+     "id": "634a95b55b",
+     "truth": "synthetic",
+     "day": 35,
+     "gran": 56
+    },
+    {
+     "id": "2749a4b27d",
+     "truth": "synthetic",
+     "day": 20,
+     "gran": 61
+    },
+    {
+     "id": "33196eb5f8",
+     "truth": "real",
+     "day": 30,
+     "gran": 201
+    },
+    {
+     "id": "bba8711a76",
+     "truth": "real",
+     "day": 27,
+     "gran": 50
+    },
+    {
+     "id": "bd72ce037e",
+     "truth": "real",
+     "day": 56,
+     "gran": 176
+    },
+    {
+     "id": "de3057de95",
+     "truth": "synthetic",
+     "day": 59,
+     "gran": 226
+    },
+    {
+     "id": "e2436c39e5",
+     "truth": "synthetic",
+     "day": 36,
+     "gran": 208
+    },
+    {
+     "id": "8d90d0e339",
+     "truth": "synthetic",
+     "day": 44,
+     "gran": 125
+    },
+    {
+     "id": "c52442b702",
+     "truth": "synthetic",
+     "day": 34,
+     "gran": 197
+    },
+    {
+     "id": "58ea46c4b6",
+     "truth": "synthetic",
+     "day": 31,
+     "gran": 42
+    },
+    {
+     "id": "71df01a893",
+     "truth": "real",
+     "day": 36,
+     "gran": 233
+    },
+    {
+     "id": "b78c7bb034",
+     "truth": "synthetic",
+     "day": 52,
+     "gran": 163
+    },
+    {
+     "id": "aff1fbe534",
+     "truth": "synthetic",
+     "day": 29,
+     "gran": 144
+    },
+    {
+     "id": "4855b7489f",
+     "truth": "synthetic",
+     "day": 21,
+     "gran": 236
+    },
+    {
+     "id": "408ad03d1c",
+     "truth": "real",
+     "day": 56,
+     "gran": 224
+    },
+    {
+     "id": "91ff320295",
+     "truth": "synthetic",
+     "day": 33,
+     "gran": 145
+    },
+    {
+     "id": "014fe015df",
+     "truth": "synthetic",
+     "day": 51,
+     "gran": 136
+    },
+    {
+     "id": "21dea47eda",
+     "truth": "synthetic",
+     "day": 48,
+     "gran": 49
+    },
+    {
+     "id": "f33328e6f0",
+     "truth": "real",
+     "day": 34,
+     "gran": 101
+    },
+    {
+     "id": "400c68c036",
+     "truth": "real",
+     "day": 45,
+     "gran": 79
+    },
+    {
+     "id": "48212090a5",
+     "truth": "real",
+     "day": 43,
+     "gran": 49
+    },
+    {
+     "id": "673f3e0602",
+     "truth": "real",
+     "day": 27,
+     "gran": 161
+    },
+    {
+     "id": "e5511d30a0",
+     "truth": "real",
+     "day": 26,
+     "gran": 234
+    },
+    {
+     "id": "562bea1e85",
+     "truth": "real",
+     "day": 38,
+     "gran": 130
+    },
+    {
+     "id": "d918ce657a",
+     "truth": "real",
+     "day": 59,
+     "gran": 180
+    },
+    {
+     "id": "c985533558",
+     "truth": "real",
+     "day": 47,
+     "gran": 78
+    },
+    {
+     "id": "fdec945995",
+     "truth": "synthetic",
+     "day": 57,
+     "gran": 215
+    },
+    {
+     "id": "2f706c09fe",
+     "truth": "synthetic",
+     "day": 38,
+     "gran": 160
+    },
+    {
+     "id": "0824edf56f",
+     "truth": "synthetic",
+     "day": 37,
+     "gran": 124
+    },
+    {
+     "id": "d4325b11dd",
+     "truth": "synthetic",
+     "day": 40,
+     "gran": 57
+    },
+    {
+     "id": "44e89090d7",
+     "truth": "synthetic",
+     "day": 39,
+     "gran": 21
+    },
+    {
+     "id": "aed62dd108",
+     "truth": "real",
+     "day": 21,
+     "gran": 166
+    },
+    {
+     "id": "5339511dfc",
+     "truth": "synthetic",
+     "day": 26,
+     "gran": 71
+    },
+    {
+     "id": "db3eebfdde",
+     "truth": "real",
+     "day": 43,
+     "gran": 228
+    },
+    {
+     "id": "bfdbd92173",
+     "truth": "real",
+     "day": 58,
+     "gran": 156
+    },
+    {
+     "id": "2fcd6416d2",
+     "truth": "synthetic",
+     "day": 45,
+     "gran": 162
+    },
+    {
+     "id": "8fb7ff2fc8",
+     "truth": "synthetic",
+     "day": 20,
+     "gran": 178
+    },
+    {
+     "id": "91ee3c757f",
+     "truth": "real",
+     "day": 51,
+     "gran": 237
+    },
+    {
+     "id": "d86ccb2f74",
+     "truth": "synthetic",
+     "day": 56,
+     "gran": 174
+    },
+    {
+     "id": "214538c9e6",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 127
+    },
+    {
+     "id": "6e5a068ec5",
+     "truth": "synthetic",
+     "day": 54,
+     "gran": 108
+    },
+    {
+     "id": "5a1e1e2f31",
+     "truth": "synthetic",
+     "day": 51,
+     "gran": 89
+    },
+    {
+     "id": "45a3a0f64a",
+     "truth": "real",
+     "day": 41,
+     "gran": 183
+    },
+    {
+     "id": "87a740b253",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 225
+    },
+    {
+     "id": "56a01a08a5",
+     "truth": "synthetic",
+     "day": 43,
+     "gran": 214
+    },
+    {
+     "id": "5df2fcdd7b",
+     "truth": "synthetic",
+     "day": 28,
+     "gran": 168
+    },
+    {
+     "id": "ffa1d005b8",
+     "truth": "real",
+     "day": 47,
+     "gran": 28
+    },
+    {
+     "id": "5ac841206c",
+     "truth": "synthetic",
+     "day": 22,
+     "gran": 25
+    },
+    {
+     "id": "1d865242ad",
+     "truth": "real",
+     "day": 42,
+     "gran": 89
+    },
+    {
+     "id": "2eae1eef0c",
+     "truth": "real",
+     "day": 52,
+     "gran": 193
+    },
+    {
+     "id": "b99eef38a0",
+     "truth": "real",
+     "day": 50,
+     "gran": 64
+    },
+    {
+     "id": "abfc631ad7",
+     "truth": "synthetic",
+     "day": 25,
+     "gran": 79
+    },
+    {
+     "id": "1d8c9a1502",
+     "truth": "real",
+     "day": 35,
+     "gran": 121
+    },
+    {
+     "id": "273299023f",
+     "truth": "synthetic",
+     "day": 51,
+     "gran": 54
+    },
+    {
+     "id": "2c200a2803",
+     "truth": "synthetic",
+     "day": 59,
+     "gran": 229
+    },
+    {
+     "id": "f9f806d8a9",
+     "truth": "real",
+     "day": 25,
+     "gran": 198
+    },
+    {
+     "id": "9ea3eedd60",
+     "truth": "real",
+     "day": 35,
+     "gran": 86
+    },
+    {
+     "id": "b960432e6e",
+     "truth": "synthetic",
+     "day": 54,
+     "gran": 49
+    }
+   ]
+  }
+ }
+}
